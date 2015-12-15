@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+
 
 namespace RIS.KONGJIAN
 {
@@ -30,27 +32,39 @@ namespace RIS.KONGJIAN
         public event RoutedEventHandler Xiugai_Click;
         public event RoutedEventHandler Shanchu_Click;
 
-        private void xinjiaUI_Click(object sender, RoutedEventArgs e)
+        private async void xinjiaUI_Click(object sender, RoutedEventArgs e)
         {
             if (Xinjia_Click!=null)
             {
                 Xinjia_Click(sender, e);
             }
+            else
+            {
+                await DialogManager.ShowMessageAsync(this.TryFindParent<MetroWindow>(),"提示","没有定义此功能！");
+            }
         }
 
-        private void xiugaiUI_Click(object sender, RoutedEventArgs e)
+        private async void xiugaiUI_Click(object sender, RoutedEventArgs e)
         {
             if (Xiugai_Click != null)
             {
                 Xiugai_Click(sender, e);
             }
+            else
+            {
+                await DialogManager.ShowMessageAsync(this.TryFindParent<MetroWindow>(), "提示", "没有定义此功能！");
+            }
         }
 
-        private void shanchuUI_Click(object sender, RoutedEventArgs e)
+        private async void shanchuUI_Click(object sender, RoutedEventArgs e)
         {
             if (Shanchu_Click != null)
             {
                 Shanchu_Click(sender, e);
+            }
+            else
+            {
+                await DialogManager.ShowMessageAsync(this.TryFindParent<MetroWindow>(), "提示", "没有定义此功能！");
             }
         }
     }

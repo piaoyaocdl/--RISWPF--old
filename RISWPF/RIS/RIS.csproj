@@ -84,13 +84,9 @@
     <Compile Include="KONGJIAN\Fenyechaxun.xaml.cs">
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512151210372_jiji.cs" />
-    <Compile Include="Migrations\201512151210372_jiji.Designer.cs">
-      <DependentUpon>201512151210372_jiji.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512151223005_jiji1.cs" />
-    <Compile Include="Migrations\201512151223005_jiji1.Designer.cs">
-      <DependentUpon>201512151223005_jiji1.cs</DependentUpon>
+    <Compile Include="Migrations\201512151301544_jiji.cs" />
+    <Compile Include="Migrations\201512151301544_jiji.Designer.cs">
+      <DependentUpon>201512151301544_jiji.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
@@ -100,11 +96,17 @@
     <Compile Include="PAGE\SYST\Zhuchuangti.xaml.cs">
       <DependentUpon>Zhuchuangti.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\Jianceshenqingdan.xaml.cs">
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Jianceshenqingdan.xaml.cs">
       <DependentUpon>Jianceshenqingdan.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\SJ.cs" />
-    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\Tianjiashenqingdan.xaml.cs">
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\SJ.cs" />
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiawendang.xaml.cs">
+      <DependentUpon>Tianjiawendang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiayangben.xaml.cs">
+      <DependentUpon>Tianjiayangben.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiashenqingdan.xaml.cs">
       <DependentUpon>Tianjiashenqingdan.xaml</DependentUpon>
     </Compile>
     <Compile Include="Shujuku.cs" />
@@ -128,11 +130,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\Jianceshenqingdan.xaml">
+    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Jianceshenqingdan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\Tianjiashenqingdan.xaml">
+    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiawendang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiayangben.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiashenqingdan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,11 +168,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201512151210372_jiji.resx">
-      <DependentUpon>201512151210372_jiji.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512151223005_jiji1.resx">
-      <DependentUpon>201512151223005_jiji1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512151301544_jiji.resx">
+      <DependentUpon>201512151301544_jiji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

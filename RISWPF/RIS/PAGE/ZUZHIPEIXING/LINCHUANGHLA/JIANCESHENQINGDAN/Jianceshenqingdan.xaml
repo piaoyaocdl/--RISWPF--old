@@ -3,8 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA"
-      xmlns:KONGJIAN="clr-namespace:RIS.KONGJIAN" x:Class="RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.Jianceshenqingdan"
+      xmlns:local="clr-namespace:RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN"
+      xmlns:KONGJIAN="clr-namespace:RIS.KONGJIAN" x:Class="RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Jianceshenqingdan"
       mc:Ignorable="d" IsVisibleChanged="Page_IsVisibleChanged"
       d:DesignHeight="1100" d:DesignWidth="1100"
       Title="Jianceshenqingdan">
@@ -26,7 +26,7 @@
             <Label x:Name="label1_Copy" Content="申请单列表" Style="{StaticResource ResourceKey=zibiaoti}" Width="830" HorizontalAlignment="Left" VerticalAlignment="Center" />
             <KONGJIAN:Biaogekongzhi x:Name="shenqingdanUI" Xinjia_Click="shenqingdanUI_Xinjia_Click" Xiugai_Click="shenqingdanUI_Xiugai_Click" Shanchu_Click="shenqingdanUI_Shanchu_Click" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" />
         </Grid>
-        <DataGrid x:Name="shenqingdanliebiaoUI" Height="200" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid x:Name="shenqingdanliebiaoUI" Height="150" SelectionChanged="shenqingdanliebiaoUI_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="ID" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding shenqingdanbianhao}" Header="申请单编号"/>
@@ -37,16 +37,29 @@
 
         </DataGrid>
         <Grid>
-            <Label x:Name="label1_Copy1" Content="样本列表" Style="{StaticResource ResourceKey=zibiaoti}" Width="830" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label x:Name="label1_Copy1" Content="样本(申请单)" Style="{StaticResource ResourceKey=zibiaoti}" Width="830" HorizontalAlignment="Left" VerticalAlignment="Center" />
             <KONGJIAN:Biaogekongzhi x:Name="yangbenkongzhiUI" Xinjia_Click="yangbenkongzhiUI_Xinjia_Click" Xiugai_Click="yangbenkongzhiUI_Xiugai_Click" Shanchu_Click="yangbenkongzhiUI_Shanchu_Click" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" />
         </Grid>
-        <DataGrid x:Name="yangbenUI" Height="200" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid x:Name="yangbenUI" Height="150" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="ID" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding yangbenbianhao}" Header="样本编号"/>
                 <DataGridTextColumn Binding="{Binding xingming}" Header="姓名"/>
                 <DataGridTextColumn Binding="{Binding xingbie}" Header="性别"/>
                 <DataGridTextColumn Binding="{Binding gonghuanguanxi}" Header="共患关系"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Grid>
+            <Label x:Name="label1_Copy2" Content="文档(申请单)" Style="{StaticResource ResourceKey=zibiaoti}" Width="830" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <KONGJIAN:Biaogekongzhi x:Name="wendangkongzhiUI"  HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" />
+        </Grid>
+        <DataGrid x:Name="wendangUI" Height="150" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Header="ID"  />
+                <DataGridTextColumn Binding="{Binding wendangming}" Header="文档名" />
+                <DataGridTextColumn Binding="{Binding daxiao}" Header="大小"  />
+                <DataGridTextColumn Binding="{Binding xingbie}" Header="备注" IsReadOnly="False"/>
             </DataGrid.Columns>
 
         </DataGrid>

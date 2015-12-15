@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls.Dialogs;
 using MahApps.Metro.Controls;
 
-namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
+namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 {
     /// <summary>
     /// Jianceshenqingdan.xaml 的交互逻辑
@@ -25,12 +25,18 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
         public Jianceshenqingdan()
         {
             InitializeComponent();
+            wendangkongzhiUI.xiugaiUI.Content ="下载";
+            wendangkongzhiUI.xinjiaUI.Content = "上传";
         }
 
         private Shujuku shujuku = new Shujuku();
         private List<Zuzhipeixing_linchuanghla_shenqingdanSet> shenqingdanliebiao_shujuyuan
         {
-            set { shenqingdanliebiaoUI.ItemsSource = value; }
+            set
+            {
+                yangben_shujuyuan = null;
+                shenqingdanliebiaoUI.ItemsSource = value;
+            }
             get { return (List<Zuzhipeixing_linchuanghla_shenqingdanSet>)shenqingdanliebiaoUI.ItemsSource; }
         }
 
@@ -49,12 +55,30 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
             }
         }
 
-        
+        private List<Zuzhipeixing_linchuanghla_yangbenSet> yangben_shujuyuan
+        {
+            set { yangbenUI.ItemsSource = value; }
+            get { return (List<Zuzhipeixing_linchuanghla_yangbenSet>)yangbenUI.ItemsSource; }
+        }
+        private Zuzhipeixing_linchuanghla_yangbenSet xuanzedeyangben
+        {
+            get
+            {
+                if (yangbenUI!=null&&yangbenUI.SelectedItem!=null)
+                {
+                    return (Zuzhipeixing_linchuanghla_yangbenSet)yangbenUI.SelectedItem;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         private void shenqingdanUI_Xinjia_Click(object sender, RoutedEventArgs e)
         {
-            var tianjiachuangkou = new Tianjiayangben();
+            var tianjiachuangkou = new Tianjiashenqingdan();
             tianjiachuangkou.shuju = new Zuzhipeixing_linchuanghla_shenqingdanSet();
             tianjiachuangkou.ShowDialog();
             shujuku.Zuzhipeixing_linchuanghla_shenqingdanSet.Add(tianjiachuangkou.shuju);
@@ -70,7 +94,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
                 return;
             }
 
-            var tianjiachuangkou = new Tianjiayangben();
+            var tianjiachuangkou = new Tianjiashenqingdan();
             tianjiachuangkou.shuju = xuanzedeshenqingdan;
             tianjiachuangkou.ShowDialog();
             shujuku.SaveChanges();
@@ -112,19 +136,55 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
             }
         }
 
-        private void yangbenkongzhiUI_Xinjia_Click(object sender, RoutedEventArgs e)
+        private async void yangbenkongzhiUI_Xinjia_Click(object sender, RoutedEventArgs e)
         {
+            if (xuanzedeshenqingdan==null)
+            {
+                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择申请单！");
+                return;
+            }
+            var tianjiayangben = new Tianjiayangben();
+            tianjiayangben.shuju = new Zuzhipeixing_linchuanghla_yangbenSet();
+            tianjiayangben.shuju.shenqingdan = xuanzedeshenqingdan;
+            tianjiayangben.ShowDialog();
+            shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Add(tianjiayangben.shuju);
+            shujuku.SaveChanges();
+            yangben_shujuyuan = xuanzedeshenqingdan.yangbens.ToList();
 
         }
 
-        private void yangbenkongzhiUI_Xiugai_Click(object sender, RoutedEventArgs e)
+        private async void yangbenkongzhiUI_Xiugai_Click(object sender, RoutedEventArgs e)
         {
-
+            if (xuanzedeyangben==null)
+            {
+                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择样本！");
+                return;
+            }
+            var tianjiayangben = new Tianjiayangben();
+            tianjiayangben.shuju = xuanzedeyangben;
+            tianjiayangben.ShowDialog();
+            shujuku.SaveChanges();
+            yangben_shujuyuan = xuanzedeshenqingdan.yangbens.ToList();
         }
 
-        private void yangbenkongzhiUI_Shanchu_Click(object sender, RoutedEventArgs e)
+        private async void yangbenkongzhiUI_Shanchu_Click(object sender, RoutedEventArgs e)
         {
+            if (xuanzedeyangben == null)
+            {
+                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择样本！");
+                return;
+            }
+            shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Remove(xuanzedeyangben);
+            shujuku.SaveChanges();
+            yangben_shujuyuan = xuanzedeshenqingdan.yangbens.ToList();
+        }
 
+        private void shenqingdanliebiaoUI_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (xuanzedeshenqingdan!=null)
+            {
+                yangben_shujuyuan = xuanzedeshenqingdan.yangbens.ToList();
+            }
         }
     }
 }

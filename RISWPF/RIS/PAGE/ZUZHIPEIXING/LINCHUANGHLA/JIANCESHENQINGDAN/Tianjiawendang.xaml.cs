@@ -13,22 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
-namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
+namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 {
     /// <summary>
     /// Tianjiashenqingdan.xaml 的交互逻辑
     /// </summary>
-    public partial class Tianjiayangben : MetroWindow
+    public partial class Tianjiawendang : MetroWindow
     {
-        public Tianjiayangben()
+        public Tianjiawendang()
         {
             InitializeComponent();
         }
 
-        public Zuzhipeixing_linchuanghla_shenqingdanSet shuju
+        public Zuzhipeixing_linchuanghla_yangbenSet shuju
         {
             set { shujuUI.DataContext = value; }
-            get { return (Zuzhipeixing_linchuanghla_shenqingdanSet)shujuUI.DataContext; }
+            get { return (Zuzhipeixing_linchuanghla_yangbenSet)shujuUI.DataContext; }
         }
     }
 }

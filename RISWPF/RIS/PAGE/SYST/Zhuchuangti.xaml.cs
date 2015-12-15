@@ -34,7 +34,7 @@ namespace RIS.PAGE.SYST
 
         private void 组织配型_临床HLA_检测申请单_Selected(object sender, RoutedEventArgs e)
         {
-            jiazaiqi.Content = new PAGE.ZUZHIPEIXING.LINCHUANGHLA.Jianceshenqingdan();
+            jiazaiqi.Content = new PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Jianceshenqingdan();
         }
     }
 }

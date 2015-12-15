@@ -13,7 +13,7 @@ namespace RIS.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201512151210372_jiji"; }
+            get { return "201512151301544_jiji"; }
         }
         
         string IMigrationMetadata.Source
