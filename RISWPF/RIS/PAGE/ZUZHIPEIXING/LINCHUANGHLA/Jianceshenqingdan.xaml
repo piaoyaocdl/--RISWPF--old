@@ -37,10 +37,10 @@
 
         </DataGrid>
         <TabControl x:Name="tabControl" Height="252" >
-            <TabItem Header="TabItem" FontSize="16">
+            <TabItem Header="样本" FontSize="16">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="TabItem" FontSize="16">
+            <TabItem Header="附件" FontSize="16">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
