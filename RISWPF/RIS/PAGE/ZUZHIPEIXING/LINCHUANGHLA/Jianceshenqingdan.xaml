@@ -1,0 +1,38 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA"
+      xmlns:KONGJIAN="clr-namespace:RIS.KONGJIAN" x:Class="RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.Jianceshenqingdan"
+      mc:Ignorable="d" IsVisibleChanged="Page_IsVisibleChanged"
+      d:DesignHeight="1100" d:DesignWidth="1100"
+      Title="Jianceshenqingdan">
+
+
+    <StackPanel>
+        <Label x:Name="label" Content="检测申请单" Style="{StaticResource ResourceKey=yetoubiaoti}"  />
+        <Label x:Name="label1" Content="查询" Style="{StaticResource ResourceKey=zibiaoti}" />
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label x:Name="label2" Content="患者姓名" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="chaxunhuanzhexingmingUI" HorizontalAlignment="Left" Height="23" Margin="73,12,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <KONGJIAN:Fenyechaxun x:Name="fenyechaxun" HorizontalAlignment="Right" Margin="0,10,10,0" Jichuchanxun="Fenyechaxun_Jichuchanxun" VerticalAlignment="Top"/>
+        </Grid>
+        <Label x:Name="label1_Copy" Content="申请单列表" Margin="0,10,0,0" Style="{StaticResource ResourceKey=zibiaoti}" />
+        <DataGrid x:Name="shenqingdanliebiaoUI" Height="200" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Header="ID" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding shenqingdanbianhao}" Header="申请单编号"/>
+                <DataGridTextColumn Binding="{Binding huanzhexingming}" Header="患者姓名"/>
+                <DataGridTextColumn Binding="{Binding xingbie}" Header="性别"/>
+                <DataGridTextColumn Binding="{Binding chushengriqi,StringFormat='yyyy-MM-dd'}" Header="出生日期"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <KONGJIAN:Biaogekongzhi x:Name="shenqingdanUI" Xinjia_Click="shenqingdanUI_Xinjia_Click" Xiugai_Click="shenqingdanUI_Xiugai_Click" Shanchu_Click="shenqingdanUI_Shanchu_Click" HorizontalAlignment="Right" Margin="10" />
+    </StackPanel>
+</Page>

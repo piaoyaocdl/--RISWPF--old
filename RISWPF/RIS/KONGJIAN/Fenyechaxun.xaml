@@ -1,0 +1,23 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RIS.KONGJIAN"
+             xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" x:Class="RIS.KONGJIAN.Fenyechaxun"
+             mc:Ignorable="d" >
+    <StackPanel Orientation="Horizontal">
+        <Label x:Name="label" Content="共"/>
+        <Label x:Name="gongjiyeUI" Content="几"/>
+        <Label x:Name="label_Copy1" Content="页，每页"/>
+        <TextBox x:Name="meiyejitiaoUI" LostFocus="meiyejitiaoUI_LostFocus" TextWrapping="Wrap" TextAlignment="Center" Text="10" Width="30" Height="22" />
+        <Label x:Name="label_Copy2" Content="条。"/>
+        <Button x:Name="shouyeUI" Click="shouyeUI_Click" Content="首页"   Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Blue" FontFamily="Microsoft YaHei" FontSize="12"  />
+        <Button x:Name="qianyeUI" Click="qianyeUI_Click" Content="前页"   Foreground="Blue" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="12" />
+        <Label x:Name="dangqianyeUI" Content="几"/>
+        <Button x:Name="houyeUI" Click="houyeUI_Click" Content="后页"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Blue"  FontFamily="Microsoft YaHei" FontSize="12" />
+        <Button x:Name="weiyeUI" Click="weiyeUI_Click" Content="尾页" Foreground="Blue" BorderBrush="{x:Null}" Background="{x:Null}"   FontFamily="Microsoft YaHei" FontSize="12" />
+        <Button x:Name="chaxunUI" Click="chaxunUI_Click" Content="查询" Width="75" Margin="10,0,0,0" FontFamily="Microsoft YaHei" FontSize="12"  />
+
+    </StackPanel>
+</UserControl>
