@@ -22,7 +22,10 @@
             <TextBox x:Name="chaxunhuanzhexingmingUI" HorizontalAlignment="Left" Height="23" Margin="73,12,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <KONGJIAN:Fenyechaxun x:Name="fenyechaxun" HorizontalAlignment="Right" Margin="0,10,10,0" Jichuchanxun="Fenyechaxun_Jichuchanxun" VerticalAlignment="Top"/>
         </Grid>
-        <Label x:Name="label1_Copy" Content="申请单列表" Margin="0,10,0,0" Style="{StaticResource ResourceKey=zibiaoti}" />
+        <Grid>
+            <Label x:Name="label1_Copy" Content="申请单列表" Style="{StaticResource ResourceKey=zibiaoti}" Width="830" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <KONGJIAN:Biaogekongzhi x:Name="shenqingdanUI" Xinjia_Click="shenqingdanUI_Xinjia_Click" Xiugai_Click="shenqingdanUI_Xiugai_Click" Shanchu_Click="shenqingdanUI_Shanchu_Click" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" />
+        </Grid>
         <DataGrid x:Name="shenqingdanliebiaoUI" Height="200" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="ID" IsReadOnly="True"/>
@@ -33,6 +36,13 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <KONGJIAN:Biaogekongzhi x:Name="shenqingdanUI" Xinjia_Click="shenqingdanUI_Xinjia_Click" Xiugai_Click="shenqingdanUI_Xiugai_Click" Shanchu_Click="shenqingdanUI_Shanchu_Click" HorizontalAlignment="Right" Margin="10" />
+        <TabControl x:Name="tabControl" Height="252" >
+            <TabItem Header="TabItem" FontSize="16">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem" FontSize="16">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
     </StackPanel>
 </Page>

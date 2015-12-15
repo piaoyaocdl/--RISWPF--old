@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RIS.PAGE.SYST
 {
-    
+
     public class YonghuSet
     {
         [Key]
@@ -25,6 +25,10 @@ namespace RIS.PAGE.SYST
         [Key]
         public long id { set; get; }
 
-        public by
+        public string wenjianming { set; get; }
+
+        public string daxiao { set; get; }
+
+        public byte[] wenjian { set; get; }
     }
 }
