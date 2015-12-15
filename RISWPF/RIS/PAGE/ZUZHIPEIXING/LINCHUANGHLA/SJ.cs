@@ -9,6 +9,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
 {
+
+    public class Zuzhipeixing_linchuanghla_yangbenSet
+    {
+        [Key]
+        public long id { set; get; }
+        public string yangbenbianhao { set; get; }
+        public string xingming { set; get; }
+        public string xingbie { set; get; }
+        public string gonghuanguanxi { set; get; }
+    }
+
     public class Zuzhipeixing_linchuanghla_shenqingdanSet
     {
         [Key]

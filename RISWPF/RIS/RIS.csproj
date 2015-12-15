@@ -84,6 +84,15 @@
     <Compile Include="KONGJIAN\Fenyechaxun.xaml.cs">
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512151210372_jiji.cs" />
+    <Compile Include="Migrations\201512151210372_jiji.Designer.cs">
+      <DependentUpon>201512151210372_jiji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512151223005_jiji1.cs" />
+    <Compile Include="Migrations\201512151223005_jiji1.Designer.cs">
+      <DependentUpon>201512151223005_jiji1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
       <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
     </Compile>
@@ -149,6 +158,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201512151210372_jiji.resx">
+      <DependentUpon>201512151210372_jiji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512151223005_jiji1.resx">
+      <DependentUpon>201512151223005_jiji1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

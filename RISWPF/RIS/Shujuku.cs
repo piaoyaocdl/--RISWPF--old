@@ -14,5 +14,6 @@
 
         public virtual DbSet<PAGE.SYST.YonghuSet> YonghuSet { get; set; }
         public virtual DbSet<PAGE.ZUZHIPEIXING.LINCHUANGHLA.Zuzhipeixing_linchuanghla_shenqingdanSet> Zuzhipeixing_linchuanghla_shenqingdanSet { get; set; }
+        public virtual DbSet<PAGE.ZUZHIPEIXING.LINCHUANGHLA.Zuzhipeixing_linchuanghla_yangbenSet> Zuzhipeixing_linchuanghla_yangbenSet { get; set; }
     }
 }

@@ -33,6 +33,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
             set { shenqingdanliebiaoUI.ItemsSource = value; }
             get { return (List<Zuzhipeixing_linchuanghla_shenqingdanSet>)shenqingdanliebiaoUI.ItemsSource; }
         }
+
         private Zuzhipeixing_linchuanghla_shenqingdanSet xuanzedeshenqingdan
         {
             get
@@ -47,11 +48,13 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
                 }
             }
         }
+
+        
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         private void shenqingdanUI_Xinjia_Click(object sender, RoutedEventArgs e)
         {
-            var tianjiachuangkou = new Tianjiashenqingdan();
+            var tianjiachuangkou = new Tianjiayangben();
             tianjiachuangkou.shuju = new Zuzhipeixing_linchuanghla_shenqingdanSet();
             tianjiachuangkou.ShowDialog();
             shujuku.Zuzhipeixing_linchuanghla_shenqingdanSet.Add(tianjiachuangkou.shuju);
@@ -67,7 +70,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
                 return;
             }
 
-            var tianjiachuangkou = new Tianjiashenqingdan();
+            var tianjiachuangkou = new Tianjiayangben();
             tianjiachuangkou.shuju = xuanzedeshenqingdan;
             tianjiachuangkou.ShowDialog();
             shujuku.SaveChanges();
@@ -107,6 +110,21 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
             {
                 shujuku.Dispose();
             }
+        }
+
+        private void yangbenkongzhiUI_Xinjia_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void yangbenkongzhiUI_Xiugai_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void yangbenkongzhiUI_Shanchu_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

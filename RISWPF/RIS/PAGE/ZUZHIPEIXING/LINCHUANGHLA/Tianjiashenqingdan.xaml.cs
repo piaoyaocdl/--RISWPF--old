@@ -18,9 +18,9 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA
     /// <summary>
     /// Tianjiashenqingdan.xaml 的交互逻辑
     /// </summary>
-    public partial class Tianjiashenqingdan : MetroWindow
+    public partial class Tianjiayangben : MetroWindow
     {
-        public Tianjiashenqingdan()
+        public Tianjiayangben()
         {
             InitializeComponent();
         }
