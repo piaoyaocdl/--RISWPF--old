@@ -11,8 +11,9 @@ namespace CeShi01
     {
         static void Main(string[] args)
         {
-            XElement root = XElement.Load("REPORT/shiyan.xml");
+            XElement root = XElement.Load(@"F:\VStudioWork\RISWPF\RISWPF\CeShi01\REPORT\shiyan.xml");
             Console.WriteLine(root.ToString());
+            Console.ReadKey();
         }
     }
 }
