@@ -3,7 +3,7 @@ namespace RIS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class gregrewgwe : DbMigration
+    public partial class fewfew : DbMigration
     {
         public override void Up()
         {
@@ -12,9 +12,12 @@ namespace RIS.Migrations
                 c => new
                     {
                         id = c.Long(nullable: false, identity: true),
-                        wenjian = c.Binary(),
+                        wenjian = c.Binary(nullable: false),
+                        wenjianshuoming_id = c.Long(),
                     })
-                .PrimaryKey(t => t.id);
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.WenjianshuomingSets", t => t.wenjianshuoming_id)
+                .Index(t => t.wenjianshuoming_id);
             
             CreateTable(
                 "dbo.WenjianshuomingSets",
@@ -23,13 +26,11 @@ namespace RIS.Migrations
                         id = c.Long(nullable: false, identity: true),
                         wenjianming = c.String(),
                         daxiao = c.String(),
-                        wenjianid = c.Long(nullable: false),
+                        beizhu = c.String(),
                         Zuzhipeixing_linchuanghla_shenqingdanSet_id = c.Long(),
                     })
                 .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.WenjianSets", t => t.wenjianid, cascadeDelete: true)
                 .ForeignKey("dbo.Zuzhipeixing_linchuanghla_shenqingdanSet", t => t.Zuzhipeixing_linchuanghla_shenqingdanSet_id)
-                .Index(t => t.wenjianid)
                 .Index(t => t.Zuzhipeixing_linchuanghla_shenqingdanSet_id);
             
             CreateTable(
@@ -75,10 +76,10 @@ namespace RIS.Migrations
         {
             DropForeignKey("dbo.Zuzhipeixing_linchuanghla_yangbenSet", "shenqingdanid", "dbo.Zuzhipeixing_linchuanghla_shenqingdanSet");
             DropForeignKey("dbo.WenjianshuomingSets", "Zuzhipeixing_linchuanghla_shenqingdanSet_id", "dbo.Zuzhipeixing_linchuanghla_shenqingdanSet");
-            DropForeignKey("dbo.WenjianshuomingSets", "wenjianid", "dbo.WenjianSets");
+            DropForeignKey("dbo.WenjianSets", "wenjianshuoming_id", "dbo.WenjianshuomingSets");
             DropIndex("dbo.Zuzhipeixing_linchuanghla_yangbenSet", new[] { "shenqingdanid" });
             DropIndex("dbo.WenjianshuomingSets", new[] { "Zuzhipeixing_linchuanghla_shenqingdanSet_id" });
-            DropIndex("dbo.WenjianshuomingSets", new[] { "wenjianid" });
+            DropIndex("dbo.WenjianSets", new[] { "wenjianshuoming_id" });
             DropTable("dbo.Zuzhipeixing_linchuanghla_yangbenSet");
             DropTable("dbo.Zuzhipeixing_linchuanghla_shenqingdanSet");
             DropTable("dbo.YonghuSets");

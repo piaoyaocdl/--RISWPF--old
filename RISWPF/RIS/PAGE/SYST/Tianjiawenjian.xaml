@@ -27,8 +27,8 @@
         <Label x:Name="label3" Content="备注" HorizontalAlignment="Left" Margin="56,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" IsReadOnly="True" Text="{Binding wenjianming}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox1" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding daxiao}" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="1" Text="{Binding beizhu}" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" Height="60" Grid.RowSpan="2"/>
-        <Button x:Name="button" Content="选择文件" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" Name="beizhuUI" IsReadOnly="True" Text="{Binding beizhu}" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" Height="60" Grid.RowSpan="2"/>
+        <Button x:Name="xuanzewenjianUI" Click="xuanzewenjianUI_Click" Content="选择文件" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" FontStyle="Normal" Width="120" FontSize="12" FontFamily="Microsoft YaHei"/>
 
     </Grid>
 </Controls:MetroWindow>

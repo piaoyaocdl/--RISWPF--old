@@ -7,13 +7,13 @@ namespace RIS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class gregrewgwe : IMigrationMetadata
+    public sealed partial class fewfew : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(gregrewgwe));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fewfew));
         
         string IMigrationMetadata.Id
         {
-            get { return "201512160310503_gregrewgwe"; }
+            get { return "201512160752376_fewfew"; }
         }
         
         string IMigrationMetadata.Source

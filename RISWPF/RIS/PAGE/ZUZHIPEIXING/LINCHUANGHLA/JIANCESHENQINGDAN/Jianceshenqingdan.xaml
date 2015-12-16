@@ -54,12 +54,12 @@
             <Label x:Name="label1_Copy2" Content="申请单--文档" Style="{StaticResource ResourceKey=zibiaoti}" Width="830" HorizontalAlignment="Left" VerticalAlignment="Center" />
             <KONGJIAN:Biaogekongzhi x:Name="wendangkongzhiUI" Xinjia_Click="wendangkongzhiUI_Xinjia_Click" Xiugai_Click="wendangkongzhiUI_Xiugai_Click" Shanchu_Click="wendangkongzhiUI_Shanchu_Click"  HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" />
         </Grid>
-        <DataGrid x:Name="wendangUI" ItemsSource="{Binding}" Height="150"  AutoGenerateColumns="False">
+        <DataGrid x:Name="wendangUI" ItemsSource="{Binding}" Height="150" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=id}" Header="ID" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Path=wenjianming }" Header="文档名" IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding Path=daxiao}" Header="大小"  IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Path=xingbie}" Header="备注" />
+                <DataGridTextColumn Binding="{Binding Path=id}" Header="ID"  />
+                <DataGridTextColumn Binding="{Binding Path=wenjianming }" Header="文档名"   />
+                <DataGridTextColumn Binding="{Binding Path=daxiao}" Header="大小"  />
+                <DataGridTextColumn Binding="{Binding Path=beizhu}" Header="备注" />
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
