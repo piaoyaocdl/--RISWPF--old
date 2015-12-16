@@ -78,21 +78,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GONGJU\Wenjianxuanzhe.cs" />
     <Compile Include="KONGJIAN\Biaogekongzhi.xaml.cs">
       <DependentUpon>Biaogekongzhi.xaml</DependentUpon>
     </Compile>
     <Compile Include="KONGJIAN\Fenyechaxun.xaml.cs">
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512151301544_jiji.cs" />
-    <Compile Include="Migrations\201512151301544_jiji.Designer.cs">
-      <DependentUpon>201512151301544_jiji.cs</DependentUpon>
+    <Compile Include="Migrations\201512160310503_gregrewgwe.cs" />
+    <Compile Include="Migrations\201512160310503_gregrewgwe.Designer.cs">
+      <DependentUpon>201512160310503_gregrewgwe.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
       <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
     </Compile>
     <Compile Include="PAGE\SYST\SJ.cs" />
+    <Compile Include="PAGE\SYST\Tianjiawenjian.xaml.cs">
+      <DependentUpon>Tianjiawenjian.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PAGE\SYST\Zhuchuangti.xaml.cs">
       <DependentUpon>Zhuchuangti.xaml</DependentUpon>
     </Compile>
@@ -125,6 +129,10 @@
     <Page Include="PAGE\SYST\Gerenzhongxin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PAGE\SYST\Tianjiawenjian.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="PAGE\SYST\Zhuchuangti.xaml">
       <SubType>Designer</SubType>
@@ -168,8 +176,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201512151301544_jiji.resx">
-      <DependentUpon>201512151301544_jiji.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512160310503_gregrewgwe.resx">
+      <DependentUpon>201512160310503_gregrewgwe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

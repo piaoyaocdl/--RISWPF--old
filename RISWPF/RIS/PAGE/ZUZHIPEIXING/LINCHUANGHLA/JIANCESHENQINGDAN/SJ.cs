@@ -35,5 +35,6 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         public Nullable<DateTime> chushengriqi { set; get; }
 
         public virtual ICollection<Zuzhipeixing_linchuanghla_yangbenSet> yangbens { set; get; }
+        public virtual ICollection<SYST.WenjianshuomingSet> wendangs { set; get; }
     }
 }

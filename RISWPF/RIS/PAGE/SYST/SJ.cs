@@ -20,7 +20,7 @@ namespace RIS.PAGE.SYST
         public string mima { set; get; }
     }
 
-    public class Shangchuanwenjian
+    public class WenjianshuomingSet
     {
         [Key]
         public long id { set; get; }
@@ -28,6 +28,17 @@ namespace RIS.PAGE.SYST
         public string wenjianming { set; get; }
 
         public string daxiao { set; get; }
+
+        [ForeignKey("wenjian")]
+        public long wenjianid { set; get; }
+        public virtual WenjianSet wenjian { set; get; }
+
+    }
+
+    public class WenjianSet
+    {
+        [Key]
+        public long id { set; get; }
 
         public byte[] wenjian { set; get; }
     }

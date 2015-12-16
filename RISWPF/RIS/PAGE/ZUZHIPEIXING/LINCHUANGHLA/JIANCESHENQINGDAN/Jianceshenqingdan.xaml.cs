@@ -25,7 +25,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         public Jianceshenqingdan()
         {
             InitializeComponent();
-            wendangkongzhiUI.xiugaiUI.Content ="下载";
+            wendangkongzhiUI.xiugaiUI.Content = "下载";
             wendangkongzhiUI.xinjiaUI.Content = "上传";
         }
 
@@ -44,7 +44,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         {
             get
             {
-                if (shenqingdanliebiaoUI!=null && shenqingdanliebiaoUI.SelectedItem!=null)
+                if (shenqingdanliebiaoUI != null && shenqingdanliebiaoUI.SelectedItem != null)
                 {
                     return (Zuzhipeixing_linchuanghla_shenqingdanSet)shenqingdanliebiaoUI.SelectedItem;
                 }
@@ -64,7 +64,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         {
             get
             {
-                if (yangbenUI!=null&&yangbenUI.SelectedItem!=null)
+                if (yangbenUI != null && yangbenUI.SelectedItem != null)
                 {
                     return (Zuzhipeixing_linchuanghla_yangbenSet)yangbenUI.SelectedItem;
                 }
@@ -73,6 +73,12 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                     return null;
                 }
             }
+        }
+
+        private List<PAGE.SYST.WenjianshuomingSet> wendang_shujuyuan
+        {
+            set { wendangUI.ItemsSource = value; }
+            get { return (List<PAGE.SYST.WenjianshuomingSet>)wendangUI.ItemsSource; }
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -103,9 +109,9 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 
         private async void shenqingdanUI_Shanchu_Click(object sender, RoutedEventArgs e)
         {
-            if (xuanzedeshenqingdan==null)
+            if (xuanzedeshenqingdan == null)
             {
-                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow,"提示","请先选择申请单！");
+                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择申请单！");
                 return;
             }
             shujuku.Zuzhipeixing_linchuanghla_shenqingdanSet.Remove(xuanzedeshenqingdan);
@@ -119,9 +125,9 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             shujuku.Dispose();
             shujuku = new Shujuku();
             var sql = shujuku.Zuzhipeixing_linchuanghla_shenqingdanSet.AsQueryable();
-            if (chaxunhuanzhexingmingUI.Text.Trim().Length>0)
+            if (chaxunhuanzhexingmingUI.Text.Trim().Length > 0)
             {
-                sql = sql.Where(x=>x.huanzhexingming.Equals(chaxunhuanzhexingmingUI.Text.Trim()));
+                sql = sql.Where(x => x.huanzhexingming.Equals(chaxunhuanzhexingmingUI.Text.Trim()));
             }
             fenyechaxun.gongjitiao = sql.Count();
             sql = sql.OrderByDescending(x => x.id).Skip(fenyechaxun.dangqianye * fenyechaxun.meiyejitiao - fenyechaxun.meiyejitiao).Take(fenyechaxun.meiyejitiao);
@@ -130,7 +136,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if ((bool)e.NewValue==false)
+            if ((bool)e.NewValue == false)
             {
                 shujuku.Dispose();
             }
@@ -138,7 +144,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 
         private async void yangbenkongzhiUI_Xinjia_Click(object sender, RoutedEventArgs e)
         {
-            if (xuanzedeshenqingdan==null)
+            if (xuanzedeshenqingdan == null)
             {
                 await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择申请单！");
                 return;
@@ -155,7 +161,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 
         private async void yangbenkongzhiUI_Xiugai_Click(object sender, RoutedEventArgs e)
         {
-            if (xuanzedeyangben==null)
+            if (xuanzedeyangben == null)
             {
                 await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择样本！");
                 return;
@@ -181,10 +187,38 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 
         private void shenqingdanliebiaoUI_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (xuanzedeshenqingdan!=null)
+            if (xuanzedeshenqingdan != null)
             {
                 yangben_shujuyuan = xuanzedeshenqingdan.yangbens.ToList();
             }
+        }
+
+        private async void wendangkongzhiUI_Xinjia_Click(object sender, RoutedEventArgs e)
+        {
+            if (xuanzedeshenqingdan == null)
+            {
+                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择申请单！");
+                return;
+            }
+            var tianjianwenjian = new PAGE.SYST.Tianjiawenjian();
+            tianjianwenjian.ShowDialog();
+            //var wenjianshuoming = GONGJU.Wenjianxuanzhe.Dakaixuanzekuang();
+            //if (wenjianshuoming!=null)
+            //{
+            //    xuanzedeshenqingdan.wendangs.Add(wenjianshuoming);
+            //    shujuku.SaveChanges();
+            //}
+            //wendang_shujuyuan = xuanzedeshenqingdan.wendangs.ToList();
+        }
+
+        private void wendangkongzhiUI_Xiugai_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void wendangkongzhiUI_Shanchu_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
