@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls.Dialogs;
 using MahApps.Metro.Controls;
+using System.Xml.Linq;
 
 namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 {
@@ -220,7 +221,6 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             tianjianwenjian.ShowDialog();
             if (tianjianwenjian.Wenjianshuoming != null)
             {
-                shujuku.WenjianSet.Add(tianjianwenjian.Wenjianshuoming.wenjian);
                 xuanzedeshenqingdan.wendangs.Add(tianjianwenjian.Wenjianshuoming);
                 shujuku.SaveChanges();
             }
@@ -234,7 +234,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择文件！");
                 return;
             }
-            GONGJU.Xiazaiwendang.Xiazai(xuanzedewenjian);
+            GONGJU.Wendangcaozuo.Xiazai(xuanzedewenjian);
         }
 
         private async  void wendangkongzhiUI_Shanchu_Click(object sender, RoutedEventArgs e)
@@ -244,9 +244,18 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择文件！");
                 return;
             }
-            shujuku.WenjianshuomingSet.Remove(xuanzedewenjian);
-            shujuku.SaveChanges();
+            GONGJU.Wendangcaozuo.Shanchu(shujuku, xuanzedewenjian);
             wendang_shujuyuan = xuanzedeshenqingdan.wendangs.ToList();
+        }
+
+        private async void dayinbaobiaoUI_Click(object sender, RoutedEventArgs e)
+        {
+            if (xuanzedeshenqingdan==null)
+            {
+                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择申请单！");
+                return;
+            }
+           
         }
     }
 }

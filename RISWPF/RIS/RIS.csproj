@@ -78,16 +78,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GONGJU\Xiazaiwendang.cs" />
+    <Compile Include="GONGJU\Wendangcaozuo.cs" />
     <Compile Include="KONGJIAN\Biaogekongzhi.xaml.cs">
       <DependentUpon>Biaogekongzhi.xaml</DependentUpon>
     </Compile>
     <Compile Include="KONGJIAN\Fenyechaxun.xaml.cs">
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512160752376_fewfew.cs" />
-    <Compile Include="Migrations\201512160752376_fewfew.Designer.cs">
-      <DependentUpon>201512160752376_fewfew.cs</DependentUpon>
+    <Compile Include="Migrations\201512160818168_gregre.cs" />
+    <Compile Include="Migrations\201512160818168_gregre.Designer.cs">
+      <DependentUpon>201512160818168_gregre.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
@@ -169,8 +169,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201512160752376_fewfew.resx">
-      <DependentUpon>201512160752376_fewfew.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512160818168_gregre.resx">
+      <DependentUpon>201512160818168_gregre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -191,6 +191,9 @@
     <Resource Include="RESOURCE\PIC\图标.ico" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="REPORT\shiyan.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
