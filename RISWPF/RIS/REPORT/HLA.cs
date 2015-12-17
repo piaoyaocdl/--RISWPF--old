@@ -28,6 +28,8 @@ namespace RIS.REPORT
                 yangbenhang.AddAfterSelf(ls);
             }
             yangbenhang.Remove();
+
+            GONGJU.XMLcaozuo.FindById(moban,"tiaoxingma").Value=GONGJU.Tiaoxingma.Base64tiaoxingma(xuanzedeshenqingdan.shenqingdanbianhao);
             GONGJU.XMLcaozuo.BaocunXML(moban, xuanzedeshenqingdan.huanzhexingming + "-" + xuanzedeshenqingdan.shenqingdanbianhao + ".doc");
         }
     }

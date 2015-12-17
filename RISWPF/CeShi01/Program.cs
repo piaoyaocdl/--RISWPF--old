@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.IO;
+using Aspose.BarCode;
+using System.Drawing;
 
 namespace CeShi01
 {
@@ -12,25 +14,10 @@ namespace CeShi01
     {
         static void Main(string[] args)
         {
-            XElement root = XElement.Parse(CeShi01.Properties.Resources.HLA);
-            root.Descendants();
 
-            FileStream aFile = new FileStream(@"C:\Users\HSWC\Desktop\2222.txt", FileMode.Append);
-            StreamWriter sw = new StreamWriter(aFile);
-            foreach (var ls in root.Descendants())
-            {
-                if (ls.Attribute("id")!=null&&ls.Attribute("id").Value.Equals("hang"))
-                {
-                    sw.Write(ls.ToString());
-                    sw.Write("\n+++++++++++++++++++++++++++++++++++\n");
-                }
-            }
-            sw.Write("+++++++++++++++++++++++++++++++++++\n");
-            sw.Write("+++++++++++++++++++++++++++++++++++\n");
-            sw.Write("+++++++++++++++++++++++++++++++++++\n");
-            sw.Write("+++++++++++++++++++++++++++++++++++\n");
-            sw.Close();
 
         }
+       
+        
     }
 }
