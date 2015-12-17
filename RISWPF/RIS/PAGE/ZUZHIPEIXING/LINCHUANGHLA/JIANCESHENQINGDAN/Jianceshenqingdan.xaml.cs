@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls.Dialogs;
 using MahApps.Metro.Controls;
 using System.Xml.Linq;
+using System.Threading;
 
 namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 {
@@ -221,12 +222,13 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             tianjianwenjian.ShowDialog();
             if (tianjianwenjian.Wenjianshuoming != null)
             {
-                xuanzedeshenqingdan.wendangs.Add(tianjianwenjian.Wenjianshuoming);
-                shujuku.SaveChanges();
+                 xuanzedeshenqingdan.wendangs.Add(tianjianwenjian.Wenjianshuoming);
+                 new Task<int>(shujuku.SaveChanges).Start() ;
             }
             wendang_shujuyuan = xuanzedeshenqingdan.wendangs.ToList();
         }
 
+      
         private async void wendangkongzhiUI_Xiugai_Click(object sender, RoutedEventArgs e)
         {
             if (xuanzedewenjian == null)

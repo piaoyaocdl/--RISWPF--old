@@ -34,7 +34,6 @@ namespace RIS.PAGE.SYST
 
         private void xuanzewenjianUI_Click(object sender, RoutedEventArgs e)
         {
-
             Microsoft.Win32.OpenFileDialog op = new Microsoft.Win32.OpenFileDialog();
             op.InitialDirectory = @"c:\";
             op.RestoreDirectory = true;

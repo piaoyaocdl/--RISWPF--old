@@ -13,7 +13,7 @@ namespace RIS.GONGJU
         public  static void Shanchu(Shujuku shujku, PAGE.SYST.WenjianshuomingSet wenjianshuoming)
         {
             shujku.WenjianSet.Remove(wenjianshuoming.wenjian);
-            shujku.SaveChanges();
+            new Task<int>(shujku.SaveChanges).Start();
         }
         public static void Xiazai(PAGE.SYST.WenjianshuomingSet wenjianshuoming)
         {
