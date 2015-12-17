@@ -8,6 +8,7 @@ using Microsoft.Win32;
 
 namespace RIS.GONGJU
 {
+
     public class Wendangcaozuo
     {
         public  static void Shanchu(Shujuku shujku, PAGE.SYST.WenjianshuomingSet wenjianshuoming)
