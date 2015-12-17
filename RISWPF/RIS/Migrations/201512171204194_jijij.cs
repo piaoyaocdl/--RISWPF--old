@@ -3,7 +3,7 @@ namespace RIS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class gregre : DbMigration
+    public partial class jijij : DbMigration
     {
         public override void Up()
         {

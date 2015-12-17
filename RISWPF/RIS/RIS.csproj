@@ -96,9 +96,9 @@
     <Compile Include="KONGJIAN\Fenyechaxun.xaml.cs">
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512160818168_gregre.cs" />
-    <Compile Include="Migrations\201512160818168_gregre.Designer.cs">
-      <DependentUpon>201512160818168_gregre.cs</DependentUpon>
+    <Compile Include="Migrations\201512171204194_jijij.cs" />
+    <Compile Include="Migrations\201512171204194_jijij.Designer.cs">
+      <DependentUpon>201512171204194_jijij.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
@@ -181,8 +181,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201512160818168_gregre.resx">
-      <DependentUpon>201512160818168_gregre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512171204194_jijij.resx">
+      <DependentUpon>201512171204194_jijij.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,9 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="REPORT\HLA.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

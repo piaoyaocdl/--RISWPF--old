@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.IO;
-using Aspose.BarCode;
 using System.Drawing;
 
 namespace CeShi01
