@@ -79,6 +79,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GONGJU\Wendangcaozuo.cs" />
+    <Compile Include="GONGJU\XMLcaozuo.cs" />
     <Compile Include="KONGJIAN\Biaogekongzhi.xaml.cs">
       <DependentUpon>Biaogekongzhi.xaml</DependentUpon>
     </Compile>
@@ -110,6 +111,7 @@
     <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiashenqingdan.xaml.cs">
       <DependentUpon>Tianjiashenqingdan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="REPORT\HLA.cs" />
     <Compile Include="Shujuku.cs" />
     <Page Include="KONGJIAN\Biaogekongzhi.xaml">
       <SubType>Designer</SubType>
@@ -190,9 +192,8 @@
     <Resource Include="RESOURCE\PIC\印章.png" />
     <Resource Include="RESOURCE\PIC\图标.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="REPORT\shiyan.xml" />
+    <EmbeddedResource Include="REPORT\HLA.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

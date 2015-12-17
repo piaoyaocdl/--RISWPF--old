@@ -257,7 +257,7 @@ namespace RIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "提示", "请先选择申请单！");
                 return;
             }
-           
+            REPORT.HLA.Dayinbaobiao(xuanzedeshenqingdan);
         }
     }
 }
