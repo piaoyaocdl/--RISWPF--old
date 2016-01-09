@@ -70,13 +70,31 @@
     <Compile Include="Migrations\201601090251125_jiji.Designer.cs">
       <DependentUpon>201601090251125_jiji.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601090306527_d.cs" />
+    <Compile Include="Migrations\201601090306527_d.Designer.cs">
+      <DependentUpon>201601090306527_d.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PAGE\SYST\Zhuchuangti.xaml.cs">
+      <DependentUpon>Zhuchuangti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Jianceshenqingdan.xaml.cs">
+      <DependentUpon>Jianceshenqingdan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shujuku.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PAGE\SYST\Denglu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PAGE\SYST\Zhuchuangti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Jianceshenqingdan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,6 +119,9 @@
     <EmbeddedResource Include="Migrations\201601090251125_jiji.resx">
       <DependentUpon>201601090251125_jiji.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601090306527_d.resx">
+      <DependentUpon>201601090306527_d.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -120,6 +141,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="RESOURCE\PIC\印章.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="KONGJIAN\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RESOURCE\STYLE\Page.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,20 +12,13 @@ namespace HSWRIS.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(HSWRIS.Shujuku context)
+        protected override void Seed(HSWRIS.Shujuku shujuku)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var ls = shujuku.YonghuSet.Where(yong => yong.zhanghao.Equals("ceshi") && yong.mima.Equals("ceshi")).Count();
+            if (ls < 1)
+            {
+                shujuku.YonghuSet.AddOrUpdate(new YonghuSet { zhanghao = "ceshi", mima = "ceshi" });
+            }
         }
     }
 }

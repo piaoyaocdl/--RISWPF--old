@@ -26,7 +26,20 @@ namespace HSWRIS.PAGE.SYST
 
         private void dengluUI_Click(object sender, RoutedEventArgs e)
         {
-            using (Shujuku shujuku = new Shujuku()) { }
+            using (Shujuku shujuku = new Shujuku())
+            {
+                var ls= shujuku.YonghuSet.Where(yonghu => yonghu.zhanghao.Equals(zhanghaoUI.Text)&& yonghu.mima.Equals(mimaUI.Password)).Count();
+                if (ls==1)
+                {
+                    Zhuchuangti zhuchuangti = new Zhuchuangti();
+                    zhuchuangti.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("帐号或者密码错误！", "提示", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }
