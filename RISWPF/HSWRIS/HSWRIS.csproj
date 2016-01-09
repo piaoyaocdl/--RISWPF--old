@@ -67,6 +67,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="GONGJU\Util.cs" />
+    <Compile Include="KONGJIAN\Fenyechaxun.xaml.cs">
+      <DependentUpon>Fenyechaxun.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KONGJIAN\Liebiaokongzhi.xaml.cs">
       <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="KONGJIAN\Fenyechaxun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KONGJIAN\Liebiaokongzhi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
