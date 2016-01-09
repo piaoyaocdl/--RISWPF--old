@@ -66,40 +66,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GONGJU\Util.cs" />
     <Compile Include="KONGJIAN\Liebiaokongzhi.xaml.cs">
       <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601090251125_jiji.cs" />
-    <Compile Include="Migrations\201601090251125_jiji.Designer.cs">
-      <DependentUpon>201601090251125_jiji.cs</DependentUpon>
+    <Compile Include="Migrations\201601091714300_kk.cs" />
+    <Compile Include="Migrations\201601091714300_kk.Designer.cs">
+      <DependentUpon>201601091714300_kk.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601090306527_d.cs" />
-    <Compile Include="Migrations\201601090306527_d.Designer.cs">
-      <DependentUpon>201601090306527_d.cs</DependentUpon>
+    <Compile Include="Migrations\201601091719076_ll.cs" />
+    <Compile Include="Migrations\201601091719076_ll.Designer.cs">
+      <DependentUpon>201601091719076_ll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601090838364_fffe.cs" />
-    <Compile Include="Migrations\201601090838364_fffe.Designer.cs">
-      <DependentUpon>201601090838364_fffe.cs</DependentUpon>
+    <Compile Include="Migrations\201601091731551_ll1.cs" />
+    <Compile Include="Migrations\201601091731551_ll1.Designer.cs">
+      <DependentUpon>201601091731551_ll1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601090845136_fewfew.cs" />
-    <Compile Include="Migrations\201601090845136_fewfew.Designer.cs">
-      <DependentUpon>201601090845136_fewfew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601090901399_fewfewq.cs" />
-    <Compile Include="Migrations\201601090901399_fewfewq.Designer.cs">
-      <DependentUpon>201601090901399_fewfewq.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601090922158_mytyr.cs" />
-    <Compile Include="Migrations\201601090922158_mytyr.Designer.cs">
-      <DependentUpon>201601090922158_mytyr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601090930292_fgewfew.cs" />
-    <Compile Include="Migrations\201601090930292_fgewfew.Designer.cs">
-      <DependentUpon>201601090930292_fgewfew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601091006145_ggsfds.cs" />
-    <Compile Include="Migrations\201601091006145_ggsfds.Designer.cs">
-      <DependentUpon>201601091006145_ggsfds.cs</DependentUpon>
+    <Compile Include="Migrations\201601091743431_ll2.cs" />
+    <Compile Include="Migrations\201601091743431_ll2.Designer.cs">
+      <DependentUpon>201601091743431_ll2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
@@ -158,29 +143,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201601090251125_jiji.resx">
-      <DependentUpon>201601090251125_jiji.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601091714300_kk.resx">
+      <DependentUpon>201601091714300_kk.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601090306527_d.resx">
-      <DependentUpon>201601090306527_d.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601091719076_ll.resx">
+      <DependentUpon>201601091719076_ll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601090838364_fffe.resx">
-      <DependentUpon>201601090838364_fffe.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601091731551_ll1.resx">
+      <DependentUpon>201601091731551_ll1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601090845136_fewfew.resx">
-      <DependentUpon>201601090845136_fewfew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601090901399_fewfewq.resx">
-      <DependentUpon>201601090901399_fewfewq.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601090922158_mytyr.resx">
-      <DependentUpon>201601090922158_mytyr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601090930292_fgewfew.resx">
-      <DependentUpon>201601090930292_fgewfew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601091006145_ggsfds.resx">
-      <DependentUpon>201601091006145_ggsfds.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601091743431_ll2.resx">
+      <DependentUpon>201601091743431_ll2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

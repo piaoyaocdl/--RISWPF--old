@@ -2,6 +2,8 @@
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Infrastructure.Annotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
     public class Shujuku : DbContext
@@ -35,7 +37,9 @@
             var zuzhipeixing_linchuanghla_jianceshenqingdanSet = modelBuilder.Entity<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_jianceshenqingdanSet>();
             zuzhipeixing_linchuanghla_jianceshenqingdanSet.HasKey(z => z.id);
             zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.huanzhexingming).IsRequired();
-            zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.caiyangriqi).IsRequired();
+            zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.shouyangriqi).IsRequired();
+            zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.leixing).IsRequired();
+            zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.bianhao).IsRequired().HasMaxLength(50).HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(new IndexAttribute("IX_bianhao_weiyi") { IsUnique = true })); ;
         }
         public virtual DbSet<YonghuSet> YonghuSet { get; set; }
         public virtual DbSet<JichuidSet> JichuidSet { get; set; }

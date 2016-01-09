@@ -22,14 +22,27 @@ namespace HSWRIS.PAGE.SYST
         public Denglu()
         {
             InitializeComponent();
+
+            //更新 jichuid 表
+            using (Shujuku shujuku = new Shujuku())
+            {
+                var ls = shujuku.JichuidSet.Where(j => j.biaoming.Equals("Zuzhipeixing_linchuanghla_jianceshenqingdanSet") && j.lieming.Equals("bianhao")).Single();
+                if (ls.gengxinshijian.Year != DateTime.Now.Year)
+                {
+                    ls.gengxinshijian = DateTime.Now;
+                    var zuidaid = shujuku.Zuzhipeixing_linchuanghla_jianceshenqingdanSet.Max(z => z.id);
+                    ls.jichuid = zuidaid;
+                    shujuku.SaveChanges();
+                }
+            }
         }
 
         private void dengluUI_Click(object sender, RoutedEventArgs e)
         {
             using (Shujuku shujuku = new Shujuku())
             {
-                var ls= shujuku.YonghuSet.Where(yonghu => yonghu.zhanghao.Equals(zhanghaoUI.Text)&& yonghu.mima.Equals(mimaUI.Password)).Count();
-                if (ls==1)
+                var ls = shujuku.YonghuSet.Where(yonghu => yonghu.zhanghao.Equals(zhanghaoUI.Text) && yonghu.mima.Equals(mimaUI.Password)).Count();
+                if (ls == 1)
                 {
                     Zhuchuangti zhuchuangti = new Zhuchuangti();
                     zhuchuangti.Show();

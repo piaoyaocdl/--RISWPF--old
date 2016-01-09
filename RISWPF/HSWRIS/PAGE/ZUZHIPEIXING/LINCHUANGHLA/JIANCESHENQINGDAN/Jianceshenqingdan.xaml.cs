@@ -32,6 +32,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         private void shenqingdankongzhiUI_Tianjia_Click(object sender, RoutedEventArgs e)
         {
             var xin = new Zuzhipeixing_linchuanghla_jianceshenqingdanSet();
+                xin.bianhao = "lsbh";
             var tianjia = new Tianjiashenqingdan();
             tianjia.shujuyuan = xin;
             tianjia.ShowDialog();
