@@ -18,7 +18,7 @@
         <Menu x:Name="menu" Grid.ColumnSpan="2" />
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
             <TreeView x:Name="treeView" BorderBrush="{x:Null}">
-                <TreeViewItem Header="个人中心"/>
+                <TreeViewItem Header="个人中心" Name="gerenzhongxinUI" Selected="gerenzhongxinUI_Selected"/>
                 <TreeViewItem Header="组织配型" IsExpanded="True">
                     <TreeViewItem Header="临床HLA" IsExpanded="True">
                         <TreeViewItem Header="检测申请单" Name="zuzhipeiing_linchuanghla_jianceshenqingdanUI"  Selected="zuzhipeiing_linchuanghla_jianceshenqingdanUI_Selected" />
@@ -27,7 +27,7 @@
             </TreeView>
         </ScrollViewer>
         <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <Frame x:Name="jiazaiqi" Content="" NavigationUIVisibility="Hidden"/>
+            <Frame x:Name="jiazaiqi" Margin="0,0,10,0" Content="" NavigationUIVisibility="Hidden"/>
         </ScrollViewer>
 
     </Grid>

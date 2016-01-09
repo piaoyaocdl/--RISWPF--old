@@ -17,11 +17,29 @@
             base.OnModelCreating(modelBuilder);
 
             //YonghuSet
-            modelBuilder.Entity<YonghuSet>().HasKey(yonghu => yonghu.id);
-            modelBuilder.Entity<YonghuSet>().Property(yonghu => yonghu.mima).IsRequired();
-            modelBuilder.Entity<YonghuSet>().Property(yonghu => yonghu.zhanghao).IsRequired();
+            var yonghuSet = modelBuilder.Entity<YonghuSet>();
+            yonghuSet.HasKey(yonghu => yonghu.id);
+            yonghuSet.Property(yonghu => yonghu.mima).IsRequired();
+            yonghuSet.Property(yonghu => yonghu.zhanghao).IsRequired();
+
+            //JichuidSet
+            var jichuidset = modelBuilder.Entity<JichuidSet>();
+            jichuidset.HasKey(j => j.id);
+            jichuidset.Property(j => j.biaoming).IsRequired();
+            jichuidset.Property(j => j.lieming).IsRequired();
+            jichuidset.Property(j => j.gengxinpinlv).IsRequired();
+            jichuidset.Property(j => j.gengxinshijian).IsRequired();
+            jichuidset.Property(j => j.jichuid).IsRequired();
+
+            //Zuzhipeixing_linchuanghla_jianceshenqingdanSet
+            var zuzhipeixing_linchuanghla_jianceshenqingdanSet = modelBuilder.Entity<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_jianceshenqingdanSet>();
+            zuzhipeixing_linchuanghla_jianceshenqingdanSet.HasKey(z => z.id);
+            zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.huanzhexingming).IsRequired();
+            zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.caiyangriqi).IsRequired();
         }
         public virtual DbSet<YonghuSet> YonghuSet { get; set; }
+        public virtual DbSet<JichuidSet> JichuidSet { get; set; }
+        public virtual DbSet<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_jianceshenqingdanSet> Zuzhipeixing_linchuanghla_jianceshenqingdanSet { get; set; }
     }
 
     public class YonghuSet
@@ -29,5 +47,16 @@
         public int id { get; set; }
         public string zhanghao { get; set; }
         public string mima { get; set; }
+    }
+
+    public class JichuidSet
+    {
+        public int id { get; set; }
+        public string biaoming { get; set; }
+        public string lieming { get; set; }
+        public string zifenlei { get; set; }
+        public string gengxinpinlv { get; set; }
+        public DateTime gengxinshijian { get; set; }
+        public int jichuid { get; set; }
     }
 }

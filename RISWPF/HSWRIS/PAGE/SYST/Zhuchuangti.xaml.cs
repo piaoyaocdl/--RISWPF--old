@@ -28,5 +28,10 @@ namespace HSWRIS.PAGE.SYST
         {
             jiazaiqi.Content = new PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Jianceshenqingdan();
         }
+
+        private void gerenzhongxinUI_Selected(object sender, RoutedEventArgs e)
+        {
+            jiazaiqi.Content = new PAGE.SYST.Gerenzhongxin();
+        }
     }
 }

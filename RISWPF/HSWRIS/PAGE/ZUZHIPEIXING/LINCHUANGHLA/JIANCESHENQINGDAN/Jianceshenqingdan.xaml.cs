@@ -24,5 +24,43 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         {
             InitializeComponent();
         }
+
+        //--------数据处理--------------------------------------------
+        Shujuku shujuku = new Shujuku();
+
+        //--------事件处理--------------------------------------------
+        private void shenqingdankongzhiUI_Tianjia_Click(object sender, RoutedEventArgs e)
+        {
+            var xin = new Zuzhipeixing_linchuanghla_jianceshenqingdanSet();
+            var tianjia = new Tianjiashenqingdan();
+            tianjia.shujuyuan = xin;
+            tianjia.ShowDialog();
+            if (tianjia.queding)
+            {
+                shujuku.Zuzhipeixing_linchuanghla_jianceshenqingdanSet.Add(xin);
+                shujuku.SaveChanges();
+                var ls=shujuku.JichuidSet.Where(j => j.biaoming.Equals("Zuzhipeixing_linchuanghla_jianceshenqingdanSet") && j.lieming.Equals("bianhao")).Single();
+                xin.bianhao=
+                    
+            }
+        }
+
+        private void shenqingdankongzhiUI_Shanchu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void shenqingdankongzhiUI_Xiugai_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!(bool)e.NewValue)
+            {
+                shujuku.Dispose(); 
+            }
+        }
     }
 }

@@ -19,6 +19,11 @@ namespace HSWRIS.Migrations
             {
                 shujuku.YonghuSet.AddOrUpdate(new YonghuSet { zhanghao = "ceshi", mima = "ceshi" });
             }
+            var ls1 = shujuku.JichuidSet.Where(j => j.biaoming.Equals("Zuzhipeixing_linchuanghla_jianceshenqingdanSet") && j.lieming.Equals("bianhao")).Count();
+            if (ls1<1)
+            {
+                shujuku.JichuidSet.AddOrUpdate(new JichuidSet { biaoming = "Zuzhipeixing_linchuanghla_jianceshenqingdanSet",lieming="bianhao",gengxinpinlv="year",gengxinshijian=DateTime.Now,jichuid=0 });
+            }
         }
     }
 }

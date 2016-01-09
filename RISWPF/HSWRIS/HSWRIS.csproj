@@ -66,6 +66,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="KONGJIAN\Liebiaokongzhi.xaml.cs">
+      <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201601090251125_jiji.cs" />
     <Compile Include="Migrations\201601090251125_jiji.Designer.cs">
       <DependentUpon>201601090251125_jiji.cs</DependentUpon>
@@ -74,19 +77,54 @@
     <Compile Include="Migrations\201601090306527_d.Designer.cs">
       <DependentUpon>201601090306527_d.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601090838364_fffe.cs" />
+    <Compile Include="Migrations\201601090838364_fffe.Designer.cs">
+      <DependentUpon>201601090838364_fffe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601090845136_fewfew.cs" />
+    <Compile Include="Migrations\201601090845136_fewfew.Designer.cs">
+      <DependentUpon>201601090845136_fewfew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601090901399_fewfewq.cs" />
+    <Compile Include="Migrations\201601090901399_fewfewq.Designer.cs">
+      <DependentUpon>201601090901399_fewfewq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601090922158_mytyr.cs" />
+    <Compile Include="Migrations\201601090922158_mytyr.Designer.cs">
+      <DependentUpon>201601090922158_mytyr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601090930292_fgewfew.cs" />
+    <Compile Include="Migrations\201601090930292_fgewfew.Designer.cs">
+      <DependentUpon>201601090930292_fgewfew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
+      <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PAGE\SYST\Zhuchuangti.xaml.cs">
       <DependentUpon>Zhuchuangti.xaml</DependentUpon>
     </Compile>
     <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Jianceshenqingdan.xaml.cs">
       <DependentUpon>Jianceshenqingdan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\SJ.cs" />
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiashenqingdan.xaml.cs">
+      <DependentUpon>Tianjiashenqingdan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shujuku.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="KONGJIAN\Liebiaokongzhi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PAGE\SYST\Denglu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PAGE\SYST\Gerenzhongxin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,6 +160,21 @@
     <EmbeddedResource Include="Migrations\201601090306527_d.resx">
       <DependentUpon>201601090306527_d.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601090838364_fffe.resx">
+      <DependentUpon>201601090838364_fffe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601090845136_fewfew.resx">
+      <DependentUpon>201601090845136_fewfew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601090901399_fewfewq.resx">
+      <DependentUpon>201601090901399_fewfewq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601090922158_mytyr.resx">
+      <DependentUpon>201601090922158_mytyr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601090930292_fgewfew.resx">
+      <DependentUpon>201601090930292_fgewfew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -142,13 +195,16 @@
   <ItemGroup>
     <Resource Include="RESOURCE\PIC\印章.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="KONGJIAN\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="RESOURCE\STYLE\Page.xml">
+    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiashenqingdan.xaml">
       <SubType>Designer</SubType>
-    </Resource>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RESOURCE\STYLE\Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
