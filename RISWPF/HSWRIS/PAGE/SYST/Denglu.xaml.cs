@@ -23,5 +23,10 @@ namespace HSWRIS.PAGE.SYST
         {
             InitializeComponent();
         }
+
+        private void dengluUI_Click(object sender, RoutedEventArgs e)
+        {
+            using (Shujuku shujuku = new Shujuku()) { }
+        }
     }
 }
