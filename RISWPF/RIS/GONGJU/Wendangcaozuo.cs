@@ -8,9 +8,16 @@ using Microsoft.Win32;
 
 namespace RIS.GONGJU
 {
-
+    /// <summary>
+    /// 数据库，存储的文件，操作工具类
+    /// </summary>
     public class Wendangcaozuo
     {
+        /// <summary>
+        /// 删除文件
+        /// </summary>
+        /// <param name="shujku">数据库链接</param>
+        /// <param name="wenjianshuoming"></param>
         public  static void Shanchu(Shujuku shujku, PAGE.SYST.WenjianshuomingSet wenjianshuoming)
         {
             shujku.WenjianSet.Remove(wenjianshuoming.wenjian);

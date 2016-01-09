@@ -8,12 +8,21 @@ using System.Drawing;
 using ZXing;
 namespace RIS.GONGJU
 {
-    class Tiaoxingma
+    /// <summary>
+    /// 条形码工具
+    /// </summary>
+    public class Tiaoxingma
     {
+        /// <summary>
+        /// 转条形码编号，到，word可插入的条形码图片
+        /// </summary>
+        /// <param name="mahao"></param>
+        /// <returns></returns>
         public static string Base64tiaoxingma(string mahao)
         {
             BarcodeWriter writer = new BarcodeWriter();
             writer.Format = BarcodeFormat.EAN_13;
+            writer.Options.PureBarcode = true;
             Bitmap bt = writer.Write(mahao);
 
             string re;
