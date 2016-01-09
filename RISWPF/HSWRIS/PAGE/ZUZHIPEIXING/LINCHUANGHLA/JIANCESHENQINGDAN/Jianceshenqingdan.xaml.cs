@@ -40,8 +40,9 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 shujuku.Zuzhipeixing_linchuanghla_jianceshenqingdanSet.Add(xin);
                 shujuku.SaveChanges();
                 var ls=shujuku.JichuidSet.Where(j => j.biaoming.Equals("Zuzhipeixing_linchuanghla_jianceshenqingdanSet") && j.lieming.Equals("bianhao")).Single();
-                xin.bianhao=
-                    
+                var lsbianhao = (xin.id - ls.jichuid) + "";
+                xin.bianhao = xin.leixing + DateTime.Now.Year + "000000".Substring(lsbianhao.Length)+lsbianhao;
+                shujuku.SaveChanges();
             }
         }
 

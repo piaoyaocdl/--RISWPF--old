@@ -39,9 +39,14 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 MessageBox.Show("患者姓名不能为空！","提示",MessageBoxButton.OK,MessageBoxImage.Information);
                 return;
             }
-            if (shouyangriqiUI.SelectedDate==null)
+            if (shouyangriqiUI.SelectedDate == null)
             {
                 MessageBox.Show("收样日期不能为空！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            if (leixingUI.SelectedIndex < 0)
+            {
+                MessageBox.Show("类型不能为空！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
             queding = true;

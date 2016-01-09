@@ -60,8 +60,8 @@
         <Button x:Name="quedingUI" Content="确定" Click="quedingUI_Click" HorizontalAlignment="Left" Margin="815,260,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label8" Content="编号" HorizontalAlignment="Left" Margin="98,247,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="24" Margin="137,248,0,0" TextWrapping="Wrap" Text="{Binding bianhao}" IsEnabled="False" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label9" Content="类型" HorizontalAlignment="Left" Margin="320,247,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox1" te HorizontalAlignment="Left" Margin="359,249,0,0" VerticalAlignment="Top" Width="120">
+        <Label x:Name="label9" Content="类型" HorizontalAlignment="Left" Margin="320,247,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <ComboBox x:Name="leixingUI" Text="{Binding leixing}" HorizontalAlignment="Left" Margin="359,249,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="SZ" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="FY" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>

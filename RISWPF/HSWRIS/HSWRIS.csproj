@@ -97,6 +97,10 @@
     <Compile Include="Migrations\201601090930292_fgewfew.Designer.cs">
       <DependentUpon>201601090930292_fgewfew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601091006145_ggsfds.cs" />
+    <Compile Include="Migrations\201601091006145_ggsfds.Designer.cs">
+      <DependentUpon>201601091006145_ggsfds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
       <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
@@ -174,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601090930292_fgewfew.resx">
       <DependentUpon>201601090930292_fgewfew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601091006145_ggsfds.resx">
+      <DependentUpon>201601091006145_ggsfds.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
