@@ -28,51 +28,61 @@
             </ComboBox>
         </StackPanel>
         <StackPanel  Orientation="Horizontal" Margin="0,10,0,0">
-            <Label x:Name="label1" Content="   " Width="430"/>
+            <Label x:Name="label1" Content="   " Width="515"/>
             <KONGJIAN:Fenyechaxun x:Name="fenyeUI" IsEnabled="False" Fenye_Click="fenyechaxun"/>
             <Button x:Name="chaunUI" Content="查询" Click="chaxunUI_Click" Padding="10,0,10,0" Margin="10,0,0,0" RenderTransformOrigin="0.167,1.5"/>
             <Button x:Name="button_Copy1" Content="下载收样表" Padding="10,0,10,0" Margin="10,0,0,0"/>
         </StackPanel>
-        <Label x:Name="label2" Content="---- 申请单列表 ----" Margin="0,10,0,0" FontSize="15"/>
-        <DataGrid x:Name="shenqingdanliebiaoUI" ItemsSource="{Binding}" SelectionMode="Single"  MinHeight="100" Background="{x:Null}" IsReadOnly="True" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="编号" Binding="{Binding bianhao}"/>
-                <DataGridTextColumn Header="类型" Binding="{Binding leixing}"/>
-                <DataGridTextColumn Header="患者姓名" Binding="{Binding huanzhexingming}"/>
-                <DataGridTextColumn Header="性别" Binding="{Binding xingbie}"/>
-                <DataGridTextColumn Header="出生日期" Binding="{Binding chushengriqi,StringFormat=MM/dd/yyyy}"/>
-                <DataGridTextColumn Header="身份证号" Binding="{Binding shenfenzhenghao}"/>
-                <DataGridTextColumn Header="临床诊断" Binding="{Binding linchuangzhenduan}"/>
-                <DataGridTextColumn Header="住院" Binding="{Binding zhuyuan}"/>
-                <DataGridTextColumn Header="门诊" Binding="{Binding menzhen}"/>
-                <DataGridTextColumn Header="床号" Binding="{Binding chuanghao}"/>
-                <DataGridTextColumn Header="申请医院" Binding="{Binding shenqingyiyuan}"/>
-                <DataGridTextColumn Header="申请医生" Binding="{Binding shenqingyisheng}"/>
-                <DataGridTextColumn Header="采样日期" Binding="{Binding caiyangriqi,StringFormat=MM/dd/yyyy}"/>
-                <DataGridTextColumn Header="住院号" Binding="{Binding zhuyuanhao}"/>
-                <DataGridTextColumn Header="报告发送方式" Binding="{Binding baogaofasongfangshi}"/>
-                <DataGridTextColumn Header="联系电话" Binding="{Binding lianxidianhua}"/>
-                <DataGridTextColumn Header="Fax" Binding="{Binding fax}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
-                <DataGridTextColumn Header="邮编" Binding="{Binding youbian}"/>
-                <DataGridTextColumn Header="通讯地址" Binding="{Binding tongxundizhi}"/>
-                <DataGridTextColumn Header="收样者" Binding="{Binding shouyangzhe}"/>
-                <DataGridTextColumn Header="收样日期" Binding="{Binding shouyangriqi,StringFormat=MM/dd/yyyy}"/>
-                <DataGridTextColumn Header="检测单日期" Binding="{Binding jiancedanriqi,StringFormat=MM/dd/yyyy}"/>
-                <DataGridTextColumn Header="备注" Binding="{Binding beizhu}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Grid Height="22" Margin="0,5,0,0">
-            <KONGJIAN:Liebiaokongzhi HorizontalAlignment="Right"  x:Name="shenqingdankongzhiUI" Tianjia_Click="shenqingdankongzhiUI_Tianjia_Click" Shanchu_Click="shenqingdankongzhiUI_Shanchu_Click" Xiugai_Click="shenqingdankongzhiUI_Xiugai_Click" />
-        </Grid>
-        <TabControl x:Name="tabControl" MinHeight="100" Margin="0,10,0,0" Background="{x:Null}">
-            <TabItem Header="样本信息">
-                <Grid />
-            </TabItem>
-            <TabItem Header="费用信息">
-                <Grid/>
-            </TabItem>
-        </TabControl>
+        <StackPanel Orientation="Vertical" Name="shenqingdankuaiUI" Visibility="Visible">
+            <Label x:Name="label2" Content="---- 申请单列表 ----" FontSize="15"/>
+            <DataGrid x:Name="shenqingdanliebiaoUI" ItemsSource="{Binding}" SelectionMode="Single"  MinHeight="400" Background="{x:Null}" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="编号" Binding="{Binding bianhao}"/>
+                    <DataGridTextColumn Header="类型" Binding="{Binding leixing}"/>
+                    <DataGridTextColumn Header="患者姓名" Binding="{Binding huanzhexingming}"/>
+                    <DataGridTextColumn Header="性别" Binding="{Binding xingbie}"/>
+                    <DataGridTextColumn Header="出生日期" Binding="{Binding chushengriqi, StringFormat=MM/dd/yyyy}"/>
+                    <DataGridTextColumn Header="身份证号" Binding="{Binding shenfenzhenghao}"/>
+                    <DataGridTextColumn Header="临床诊断" Binding="{Binding linchuangzhenduan}"/>
+                    <DataGridTextColumn Header="住院" Binding="{Binding zhuyuan}"/>
+                    <DataGridTextColumn Header="门诊" Binding="{Binding menzhen}"/>
+                    <DataGridTextColumn Header="床号" Binding="{Binding chuanghao}"/>
+                    <DataGridTextColumn Header="申请医院" Binding="{Binding shenqingyiyuan}"/>
+                    <DataGridTextColumn Header="申请医生" Binding="{Binding shenqingyisheng}"/>
+                    <DataGridTextColumn Header="采样日期" Binding="{Binding caiyangriqi, StringFormat=MM/dd/yyyy}"/>
+                    <DataGridTextColumn Header="住院号" Binding="{Binding zhuyuanhao}"/>
+                    <DataGridTextColumn Header="报告发送方式" Binding="{Binding baogaofasongfangshi}"/>
+                    <DataGridTextColumn Header="联系电话" Binding="{Binding lianxidianhua}"/>
+                    <DataGridTextColumn Header="Fax" Binding="{Binding fax}"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
+                    <DataGridTextColumn Header="邮编" Binding="{Binding youbian}"/>
+                    <DataGridTextColumn Header="通讯地址" Binding="{Binding tongxundizhi}"/>
+                    <DataGridTextColumn Header="收样者" Binding="{Binding shouyangzhe}"/>
+                    <DataGridTextColumn Header="收样日期" Binding="{Binding shouyangriqi, StringFormat=MM/dd/yyyy}"/>
+                    <DataGridTextColumn Header="检测单日期" Binding="{Binding jiancedanriqi, StringFormat=MM/dd/yyyy}"/>
+                    <DataGridTextColumn Header="备注" Binding="{Binding beizhu}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Height="22" Margin="0,5,0,0">
+                <KONGJIAN:Liebiaokongzhi HorizontalAlignment="Right"  x:Name="shenqingdankongzhiUI" Tianjia_Click="shenqingdankongzhiUI_Tianjia_Click" Shanchu_Click="shenqingdankongzhiUI_Shanchu_Click" Xiugai_Click="shenqingdankongzhiUI_Xiugai_Click" />
+                <Button x:Name="xiangxixinxiUI" Click="liebiao_xiangxi_qiehuan" Content="详细信息" HorizontalAlignment="Left"  Width="75"/>
+            </Grid>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Name="xiangxixinxikuaiUI" Visibility="Collapsed">
+            <Label x:Name="label2_Copy" Content="---- 详细信息 ----" FontSize="15"/>
+            <TabControl x:Name="tabControl" MinHeight="400" Background="{x:Null}">
+                <TabItem Header="样本信息">
+                    <Grid />
+                </TabItem>
+                <TabItem Header="费用信息">
+                    <Grid/>
+                </TabItem>
+            </TabControl>
+            <Grid Margin="0,5,0,0" >
+                <Button x:Name="fanhuiUI" Content="返回" Click="liebiao_xiangxi_qiehuan" HorizontalAlignment="Left" Width="75"/>
+            </Grid>
+
+        </StackPanel>
 
     </StackPanel>
 </Page>

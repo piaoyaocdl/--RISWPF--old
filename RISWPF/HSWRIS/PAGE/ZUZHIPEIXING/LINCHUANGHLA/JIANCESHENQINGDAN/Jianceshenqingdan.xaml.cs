@@ -141,10 +141,17 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             {
                 sql = sql.Where(z => z.leixing.Equals(chaxunjiancexiangmuUI.Text));
             }
-            fenyeUI.Gongjiye = sql.Count()/10+1;
-            var shuju = sql.OrderByDescending(z => z.id).Skip(fenyeUI.Dangqianye*10-10).Take(10).ToList();
+            fenyeUI.Gongjiye = sql.Count()/20+1;
+            var shuju = sql.OrderByDescending(z => z.id).Skip(fenyeUI.Dangqianye*20-20).Take(20).ToList();
             shujuyuan_shenqingdanliebiao = shuju;
         }
         #endregion
+
+        private void liebiao_xiangxi_qiehuan(object sender, RoutedEventArgs e)
+        {
+            var ls = xiangxixinxikuaiUI.Visibility;
+            xiangxixinxikuaiUI.Visibility = shenqingdankuaiUI.Visibility;
+            shenqingdankuaiUI.Visibility = ls;
+        }
     }
 }

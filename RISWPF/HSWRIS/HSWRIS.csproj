@@ -89,6 +89,10 @@
     <Compile Include="Migrations\201601091743431_ll2.Designer.cs">
       <DependentUpon>201601091743431_ll2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601101532458_jiji.cs" />
+    <Compile Include="Migrations\201601101532458_jiji.Designer.cs">
+      <DependentUpon>201601101532458_jiji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
       <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
@@ -161,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601091743431_ll2.resx">
       <DependentUpon>201601091743431_ll2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601101532458_jiji.resx">
+      <DependentUpon>201601101532458_jiji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

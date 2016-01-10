@@ -7,6 +7,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
 {
+    public class Zuzhipeixing_linchuanghla_yangbenSet
+    {
+        public int id { set; get; }
+        public string ceshi { set; get; }
+
+        public Zuzhipeixing_linchuanghla_jianceshenqingdanSet shenqingdan { get; set; }
+    }
+
     public class Zuzhipeixing_linchuanghla_jianceshenqingdanSet
     {
         public int id { set; get; }
@@ -35,5 +43,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         public Nullable<DateTime> jiancedanriqi { set; get; }
         public Nullable<bool> zhuyuan { set; get; }
         public Nullable<bool> menzhen { set; get; }
+
+        public virtual ICollection<Zuzhipeixing_linchuanghla_yangbenSet> yangbens { get; set; }
     }
 }
