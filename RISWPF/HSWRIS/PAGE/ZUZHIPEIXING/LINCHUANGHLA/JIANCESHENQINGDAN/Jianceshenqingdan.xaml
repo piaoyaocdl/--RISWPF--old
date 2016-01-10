@@ -6,43 +6,73 @@
       xmlns:local="clr-namespace:HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN"
       xmlns:KONGJIAN="clr-namespace:HSWRIS.KONGJIAN" x:Class="HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Jianceshenqingdan"
       mc:Ignorable="d"  MinHeight="600"
-      d:DesignWidth="1100"
+     Width="1100"
       Title="Jianceshenqingdan"
-    IsVisibleChanged="Page_IsVisibleChanged"
-    >
+    IsVisibleChanged="Page_IsVisibleChanged" >
 
     <StackPanel>
         <Label x:Name="label" Style="{StaticResource ResourceKey=yetoubiaoti}" Content="检测申请单" />
         <StackPanel  Orientation="Horizontal" Margin="0,10,0,0">
             <Label x:Name="lable1" Content="生成检测单日期"/>
-            <DatePicker Width="100"/>
+            <DatePicker Width="100" Name="chaxunkaishiUI"/>
             <Label x:Name="label3" Content="至"/>
-            <DatePicker Width="100"/>
+            <DatePicker Width="100" Name="chaxunjieshuUI"/>
             <Label x:Name="lable_Copy3" Content="患者姓名" Margin="20,0,0,0"/>
-            <TextBox x:Name="textBox1" Height="23" TextWrapping="Wrap" Text="" Width="60"/>
+            <TextBox Height="23" Name="chaxunhuanzhexingmingUI" TextWrapping="Wrap" Text="" Width="60"/>
             <Label x:Name="lable_Copy4" Content="检测单编号" Margin="20,0,0,0"/>
-            <TextBox x:Name="textBox_Copy1" Height="23" TextWrapping="Wrap" Text="" Width="85"/>
+            <TextBox x:Name="chaxunbianhaoUI" Height="23" TextWrapping="Wrap" Text="" Width="95"/>
             <Label x:Name="lable_Copy5" Content="检测项目" Margin="20,0,0,0"/>
-            <ComboBox x:Name="comboBox1" Width="40">
+            <ComboBox x:Name="chaxunjiancexiangmuUI" Width="40">
                 <ComboBoxItem Content="SZ" />
                 <ComboBoxItem Content="FY" />
             </ComboBox>
         </StackPanel>
         <StackPanel  Orientation="Horizontal" Margin="0,10,0,0">
             <Label x:Name="label1" Content="   " Width="430"/>
-            <KONGJIAN:Fenyechaxun/>
-            <Button x:Name="button1" Content="查询" Padding="10,0,10,0" Margin="10,0,0,0" RenderTransformOrigin="0.167,1.5"/>
+            <KONGJIAN:Fenyechaxun x:Name="fenyeUI" IsEnabled="False" Fenye_Click="fenyechaxun"/>
+            <Button x:Name="chaunUI" Content="查询" Click="chaxunUI_Click" Padding="10,0,10,0" Margin="10,0,0,0" RenderTransformOrigin="0.167,1.5"/>
             <Button x:Name="button_Copy1" Content="下载收样表" Padding="10,0,10,0" Margin="10,0,0,0"/>
         </StackPanel>
         <Label x:Name="label2" Content="---- 申请单列表 ----" Margin="0,10,0,0" FontSize="15"/>
-        <DataGrid x:Name="dataGrid" MinHeight="100" Background="{x:Null}" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid x:Name="shenqingdanliebiaoUI" ItemsSource="{Binding}" SelectionMode="Single"  MinHeight="100" Background="{x:Null}" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="申请单编号"/>
+                <DataGridTextColumn Header="编号" Binding="{Binding bianhao}"/>
+                <DataGridTextColumn Header="类型" Binding="{Binding leixing}"/>
+                <DataGridTextColumn Header="患者姓名" Binding="{Binding huanzhexingming}"/>
+                <DataGridTextColumn Header="性别" Binding="{Binding xingbie}"/>
+                <DataGridTextColumn Header="出生日期" Binding="{Binding chushengriqi,StringFormat=MM/dd/yyyy}"/>
+                <DataGridTextColumn Header="身份证号" Binding="{Binding shenfenzhenghao}"/>
+                <DataGridTextColumn Header="临床诊断" Binding="{Binding linchuangzhenduan}"/>
+                <DataGridTextColumn Header="住院" Binding="{Binding zhuyuan}"/>
+                <DataGridTextColumn Header="门诊" Binding="{Binding menzhen}"/>
+                <DataGridTextColumn Header="床号" Binding="{Binding chuanghao}"/>
+                <DataGridTextColumn Header="申请医院" Binding="{Binding shenqingyiyuan}"/>
+                <DataGridTextColumn Header="申请医生" Binding="{Binding shenqingyisheng}"/>
+                <DataGridTextColumn Header="采样日期" Binding="{Binding caiyangriqi,StringFormat=MM/dd/yyyy}"/>
+                <DataGridTextColumn Header="住院号" Binding="{Binding zhuyuanhao}"/>
+                <DataGridTextColumn Header="报告发送方式" Binding="{Binding baogaofasongfangshi}"/>
+                <DataGridTextColumn Header="联系电话" Binding="{Binding lianxidianhua}"/>
+                <DataGridTextColumn Header="Fax" Binding="{Binding fax}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
+                <DataGridTextColumn Header="邮编" Binding="{Binding youbian}"/>
+                <DataGridTextColumn Header="通讯地址" Binding="{Binding tongxundizhi}"/>
+                <DataGridTextColumn Header="收样者" Binding="{Binding shouyangzhe}"/>
+                <DataGridTextColumn Header="收样日期" Binding="{Binding shouyangriqi,StringFormat=MM/dd/yyyy}"/>
+                <DataGridTextColumn Header="检测单日期" Binding="{Binding jiancedanriqi,StringFormat=MM/dd/yyyy}"/>
+                <DataGridTextColumn Header="备注" Binding="{Binding beizhu}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Grid Height="22" Margin="0,5,0,0">
             <KONGJIAN:Liebiaokongzhi HorizontalAlignment="Right"  x:Name="shenqingdankongzhiUI" Tianjia_Click="shenqingdankongzhiUI_Tianjia_Click" Shanchu_Click="shenqingdankongzhiUI_Shanchu_Click" Xiugai_Click="shenqingdankongzhiUI_Xiugai_Click" />
         </Grid>
+        <TabControl x:Name="tabControl" MinHeight="100" Margin="0,10,0,0" Background="{x:Null}">
+            <TabItem Header="样本信息">
+                <Grid />
+            </TabItem>
+            <TabItem Header="费用信息">
+                <Grid/>
+            </TabItem>
+        </TabControl>
 
     </StackPanel>
 </Page>

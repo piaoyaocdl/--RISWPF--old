@@ -24,7 +24,7 @@ namespace HSWRIS.KONGJIAN
         {
             InitializeComponent();
             Gongjiye = 0;
-            Dijiye = 0;
+            Dangqianye = 0;
         }
 
         public int Gongjiye
@@ -32,21 +32,21 @@ namespace HSWRIS.KONGJIAN
             set { gongjiyeUI.Content = value; }
             get { return (int)gongjiyeUI.Content; }
         }
-        public int Dijiye
+     
+        public int Dangqianye
         {
-            set { dijiyeUI.Content = value; }
-            get { return (int)dijiyeUI.Content; }
+            set { dangqianyeUI.Content = value; }
+            get { return (int)dangqianyeUI.Content; }
         }
-        public event RoutedEventHandler Shouye_Click;
-        public event RoutedEventHandler Qianye_Click;
-        public event RoutedEventHandler Houye_Click;
-        public event RoutedEventHandler Weiye_Click;
+
+        public event RoutedEventHandler Fenye_Click;
 
         private void shouyeUI_Click(object sender, RoutedEventArgs e)
         {
-            if (Shouye_Click!=null)
+            if (Fenye_Click != null)
             {
-                Shouye_Click(sender,e);
+                Dangqianye = 1;
+                Fenye_Click(sender,e);
             }
             else
             {
@@ -56,9 +56,10 @@ namespace HSWRIS.KONGJIAN
 
         private void qianyeUI_Click(object sender, RoutedEventArgs e)
         {
-            if (Qianye_Click != null)
+            if (Fenye_Click != null)
             {
-                Qianye_Click(sender, e);
+                Dangqianye = Math.Max(1, Dangqianye - 1);
+                Fenye_Click(sender, e);
             }
             else
             {
@@ -68,9 +69,10 @@ namespace HSWRIS.KONGJIAN
 
         private void houyeUI_Click(object sender, RoutedEventArgs e)
         {
-            if (Houye_Click != null)
+            if (Fenye_Click != null)
             {
-                Houye_Click(sender, e);
+                Dangqianye = Math.Min(Gongjiye, Dangqianye + 1);
+                Fenye_Click(sender, e);
             }
             else
             {
@@ -80,9 +82,10 @@ namespace HSWRIS.KONGJIAN
 
         private void weiyeUI_Click(object sender, RoutedEventArgs e)
         {
-            if (Weiye_Click != null)
+            if (Fenye_Click != null)
             {
-                Weiye_Click(sender, e);
+                Dangqianye = Gongjiye;
+                Fenye_Click(sender, e);
             }
             else
             {

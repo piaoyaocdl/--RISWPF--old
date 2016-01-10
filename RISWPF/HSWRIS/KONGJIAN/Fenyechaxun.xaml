@@ -8,11 +8,10 @@
     <StackPanel Orientation="Horizontal">
         <Label x:Name="label" Content="共"/>
         <Label x:Name="gongjiyeUI" Content="几"/>
-        <Label x:Name="label_Copy1" Content="页，当前第"/>
-        <Label x:Name="dijiyeUI" Content="几"/>
         <Label x:Name="label_Copy5" Content="页。"/>
         <Button x:Name="shouyeUI" Click="shouyeUI_Click" Content="首页" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF041BFF" Margin="5,0,5,0"/>
         <Button x:Name="qianyeUI" Click="qianyeUI_Click" Content="前页" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF041BFF" Margin="5,0,5,0"/>
+        <Label x:Name="dangqianyeUI" Content="几"/>
         <Button x:Name="houyeUI" Click="houyeUI_Click" Content="后页" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF041BFF" Margin="5,0,5,0"/>
         <Button x:Name="weiyeUI" Click="weiyeUI_Click" Content="尾页" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF041BFF" Margin="5,0,5,0"/>
     </StackPanel>
