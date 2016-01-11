@@ -45,11 +45,17 @@
             //Zuzhipeixing_linchuanghla_yangbenSet
             var zuzhipeixing_linchuanghla_yangbenSet = modelBuilder.Entity<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_yangbenSet>();
             zuzhipeixing_linchuanghla_yangbenSet.HasKey(z=>z.id);
+            zuzhipeixing_linchuanghla_yangbenSet.HasMany(z => z.weidians).WithRequired(y=>y.yangben);
 
+            //Zuzhipeixing_linchuanghla_weidianSet
+            var zuzhipeixing_linchuanghla_weidianSet = modelBuilder.Entity<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_weidianSet>();
+            zuzhipeixing_linchuanghla_weidianSet.HasKey(z => z.id);
         }
         public virtual DbSet<YonghuSet> YonghuSet { get; set; }
         public virtual DbSet<JichuidSet> JichuidSet { get; set; }
         public virtual DbSet<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_jianceshenqingdanSet> Zuzhipeixing_linchuanghla_jianceshenqingdanSet { get; set; }
+        public virtual DbSet<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_yangbenSet> Zuzhipeixing_linchuanghla_yangbenSet { get; set; }
+        public virtual DbSet<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_weidianSet> Zuzhipeixing_linchuanghla_weidianSet { get; set; }
     }
 
     public class YonghuSet
