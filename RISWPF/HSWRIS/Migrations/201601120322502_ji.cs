@@ -3,7 +3,7 @@ namespace HSWRIS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class gre : DbMigration
+    public partial class ji : DbMigration
     {
         public override void Up()
         {
@@ -69,19 +69,54 @@ namespace HSWRIS.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
+                        yuanshibianhao = c.String(),
+                        xingming = c.String(),
+                        xingbie = c.String(),
+                        chushengriqi = c.DateTime(),
+                        leixing = c.String(),
+                        yangbenbianhao = c.String(),
+                        huanzhebenren = c.Boolean(),
+                        gonghuanguanxi = c.String(),
+                        songjiandanwei = c.String(),
+                        yangbenleixing = c.String(),
+                        yangguanshu = c.Int(),
+                        yangbenhege = c.Boolean(),
+                        caiyangriqi = c.DateTime(),
+                        shouyangriqi = c.DateTime(),
+                        fufeiriqi = c.DateTime(),
+                        shouyangzhe = c.String(),
+                        jianceriqi = c.DateTime(),
+                        beizhu = c.String(),
                         shenqingdan_id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.id)
                 .ForeignKey("dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet", t => t.shenqingdan_id, cascadeDelete: true)
                 .Index(t => t.shenqingdan_id);
             
+            CreateTable(
+                "dbo.Zuzhipeixing_linchuanghla_weidianSet",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        fenzu = c.String(),
+                        leixing = c.String(),
+                        weidian = c.String(),
+                        yangben_id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.Zuzhipeixing_linchuanghla_yangbenSet", t => t.yangben_id, cascadeDelete: true)
+                .Index(t => t.yangben_id);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Zuzhipeixing_linchuanghla_yangbenSet", "shenqingdan_id", "dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet");
+            DropForeignKey("dbo.Zuzhipeixing_linchuanghla_weidianSet", "yangben_id", "dbo.Zuzhipeixing_linchuanghla_yangbenSet");
+            DropIndex("dbo.Zuzhipeixing_linchuanghla_weidianSet", new[] { "yangben_id" });
             DropIndex("dbo.Zuzhipeixing_linchuanghla_yangbenSet", new[] { "shenqingdan_id" });
             DropIndex("dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet", "IX_bianhao_weiyi");
+            DropTable("dbo.Zuzhipeixing_linchuanghla_weidianSet");
             DropTable("dbo.Zuzhipeixing_linchuanghla_yangbenSet");
             DropTable("dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet");
             DropTable("dbo.YonghuSets");

@@ -73,25 +73,9 @@
     <Compile Include="KONGJIAN\Liebiaokongzhi.xaml.cs">
       <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601110517380_gre.cs" />
-    <Compile Include="Migrations\201601110517380_gre.Designer.cs">
-      <DependentUpon>201601110517380_gre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601110520479_fefw.cs" />
-    <Compile Include="Migrations\201601110520479_fefw.Designer.cs">
-      <DependentUpon>201601110520479_fefw.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601110539456_fewfw.cs" />
-    <Compile Include="Migrations\201601110539456_fewfw.Designer.cs">
-      <DependentUpon>201601110539456_fewfw.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601110642245_fewfew.cs" />
-    <Compile Include="Migrations\201601110642245_fewfew.Designer.cs">
-      <DependentUpon>201601110642245_fewfew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601110801427_fefw1.cs" />
-    <Compile Include="Migrations\201601110801427_fefw1.Designer.cs">
-      <DependentUpon>201601110801427_fefw1.cs</DependentUpon>
+    <Compile Include="Migrations\201601120322502_ji.cs" />
+    <Compile Include="Migrations\201601120322502_ji.Designer.cs">
+      <DependentUpon>201601120322502_ji.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
@@ -157,20 +141,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201601110517380_gre.resx">
-      <DependentUpon>201601110517380_gre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601110520479_fefw.resx">
-      <DependentUpon>201601110520479_fefw.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601110539456_fewfw.resx">
-      <DependentUpon>201601110539456_fewfw.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601110642245_fewfew.resx">
-      <DependentUpon>201601110642245_fewfew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601110801427_fefw1.resx">
-      <DependentUpon>201601110801427_fefw1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601120322502_ji.resx">
+      <DependentUpon>201601120322502_ji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
