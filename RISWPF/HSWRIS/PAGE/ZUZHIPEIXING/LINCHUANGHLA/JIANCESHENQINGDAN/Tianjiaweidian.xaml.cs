@@ -114,7 +114,10 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         //添加位点
         private void tianjiabtUI_Click(object sender, RoutedEventArgs e)
         {
-
+            if (yangben.weidians==null)
+            {
+                yangben.weidians = new List<Zuzhipeixing_linchuanghla_weidianSet>();
+            }
             foreach (var ls in shanchuUI.SelectedItems)
             {
                 var dangqian = (Zuzhipeixing_linchuanghla_weidianSet)ls;
