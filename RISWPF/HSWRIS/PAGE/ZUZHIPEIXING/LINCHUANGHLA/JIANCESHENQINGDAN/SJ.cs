@@ -15,120 +15,27 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         public string fenzu { set; get; }
         public string leixing { set; get; }
         public string weidian { set; get; }
+        public string beizhu { set; get; }
+
+        public bool jiancefou { set; get; }
         public Zuzhipeixing_linchuanghla_yangbenSet yangben { set; get; }
-    }
 
-    public class Weidianbool
-    {
-        public List<Zuzhipeixing_linchuanghla_weidianSet> weidianset
+        public bool xiangtong(Zuzhipeixing_linchuanghla_weidianSet z)
         {
-            set
+            if (z.fenzu.Equals(this.fenzu)&&z.leixing.Equals(this.leixing)&&z.weidian.Equals(this.weidian))
             {
-                foreach (PropertyInfo p in this.GetType().GetProperties())
-                {
-                    if (!p.Name.Equals("weidianset") )
-                    {
-                        p.SetValue(this, false);
-                    }
-                }
-
-                foreach (var ls in value)
-                {
-                    this.GetType().GetProperty(ls.fenzu + ls.leixing +ls.weidian).SetValue(this,true);
-                }
+                return true;
             }
-            get
+            else
             {
-                var re = new List<Zuzhipeixing_linchuanghla_weidianSet>();
-
-                foreach (PropertyInfo p in this.GetType().GetProperties())
-                {
-                    if (!p.Name.Equals("weidianset") && (bool)p.GetValue(this))
-                    {
-                        if (p.Name.IndexOf("zu") >= 0)
-                        {
-                            re.Add(new Zuzhipeixing_linchuanghla_weidianSet { fenzu = p.Name, leixing = "", weidian = "" });
-                        }
-                        else
-                        {
-                            var ls = p.Name.Split('_');
-                            re.Add(new Zuzhipeixing_linchuanghla_weidianSet { fenzu=ls[0],leixing=ls[1],weidian=ls[2]});
-                        }
-                    }
-
-                }
-                return re;
+                return false;
             }
         }
-
-        public bool gaofenzu { set; get; }
-        public bool gaofen_sbt_a { set; get; }
-        public bool gaofen_sbt_b { set; get; }
-        public bool gaofen_sbt_drb1 { set; get; }
-        public bool gaofen_sbt_c { set; get; }
-        public bool gaofen_sbt_dqb1 { set; get; }
-        public bool gaofen_sbt_dpb1 { set; get; }
-
-        public bool dengweizu { set; get; }
-        public bool dengwei_ssop_a { set; get; }
-        public bool dengwei_ssop_b { set; get; }
-        public bool dengwei_ssop_drb1 { set; get; }
-        public bool dengwei_ssop_c { set; get; }
-        public bool dengwei_ssop_dqb1 { set; get; }
-        public bool dengwei_ssop_dpb1 { set; get; }
-        public bool dengwei_sbt_a { set; get; }
-        public bool dengwei_sbt_b { set; get; }
-        public bool dengwei_sbt_drb1 { set; get; }
-        public bool dengwei_sbt_c { set; get; }
-        public bool dengwei_sbt_dqb1 { set; get; }
-        public bool dengwei_sbt_dpb1 { set; get; }
-
-        public bool dengwei_ngs_c1 { set; get; }
-        public bool dengwei_ngs_c2 { set; get; }
-
-
-        public bool chushaizu { set; get; }
-        public bool chushai_ssop_a { set; get; }
-        public bool chushai_ssop_b { set; get; }
-        public bool chushai_ssop_drb1 { set; get; }
-        public bool chushai_ssop_c { set; get; }
-        public bool chushai_ssop_dqb1 { set; get; }
-        public bool chushai_ssop_dpb1 { set; get; }
-
-        public bool chushai_ngs_c1 { set; get; }
-        public bool chushai_ngs_c2 { set; get; }
-
-        public bool mianfeizu { set; get; }
-        public bool mianfei_ssop_a { set; get; }
-        public bool mianfei_ssop_b { set; get; }
-        public bool mianfei_ssop_drb1 { set; get; }
-        public bool mianfei_ssop_c { set; get; }
-        public bool mianfei_ssop_dqb1 { set; get; }
-        public bool mianfei_ssop_dpb1 { set; get; }
-        public bool mianfei_sbt_a { set; get; }
-        public bool mianfei_sbt_b { set; get; }
-        public bool mianfei_sbt_drb1 { set; get; }
-        public bool mianfei_sbt_c { set; get; }
-        public bool mianfei_sbt_dqb1 { set; get; }
-        public bool mianfei_sbt_dpb1 { set; get; }
-
-        public bool dangezu { set; get; }
-        public bool dange_ssop_a { set; get; }
-        public bool dange_ssop_b { set; get; }
-        public bool dange_ssop_drb1 { set; get; }
-        public bool dange_ssop_c { set; get; }
-        public bool dange_ssop_dqb1 { set; get; }
-        public bool dange_ssop_dpb1 { set; get; }
-        public bool dange_sbt_a { set; get; }
-        public bool dange_sbt_b { set; get; }
-        public bool dange_sbt_drb1 { set; get; }
-        public bool dange_sbt_c { set; get; }
-        public bool dange_sbt_dqb1 { set; get; }
-        public bool dange_sbt_dpb1 { set; get; }
     }
 
     public class Zuzhipeixing_linchuanghla_yangbenSet
     {
+
         public int id { set; get; }
 
         public string yuanshibianhao { set; get; }//原始编号

@@ -74,7 +74,7 @@
                 <TabItem Header="样本信息">
                     <StackPanel Orientation="Horizontal"  >
                         <Grid Width="770">
-                            <DataGrid x:Name="yangbenliebiaoUI" ItemsSource="{Binding}" Background="{x:Null}" Margin="0,0,0,27" IsReadOnly="True" AutoGenerateColumns="False">
+                            <DataGrid x:Name="yangbenliebiaoUI" SelectionChanged="yangbenliebiaoUI_SelectionChanged" ItemsSource="{Binding}"  SelectionMode="Single" Background="{x:Null}" Margin="0,0,0,27" IsReadOnly="True" AutoGenerateColumns="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Binding="{Binding yuanshibianhao}" Header="原始编号"/>
                                     <DataGridTextColumn Binding="{Binding xingming}" Header="姓名"/>
@@ -96,107 +96,20 @@
                                     <DataGridTextColumn Binding="{Binding beizhu}" Header="备注"/>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <KONGJIAN:Liebiaokongzhi x:Name="yangbenkongzuiUI" Tianjia_Click="yangbenkongzuiUI_Tianjia_Click" Xiugai_Click="yangbenkongzuiUI_Xiugai_Click" Shanchu_Click="yangbenkongzuiUI_Shanchu_Click" HorizontalAlignment="Left" Margin="525,346,0,0" VerticalAlignment="Top"/>
+                            <KONGJIAN:Liebiaokongzhi x:Name="yangbenkongzuiUI"  Tianjia_Click="yangbenkongzuiUI_Tianjia_Click" Xiugai_Click="yangbenkongzuiUI_Xiugai_Click" Shanchu_Click="yangbenkongzuiUI_Shanchu_Click" HorizontalAlignment="Left" Margin="525,346,0,0" VerticalAlignment="Top"/>
                         </Grid>
-                        <StackPanel Width="315" IsEnabled="False" >
-                            <Grid >
-                                <CheckBox  x:Name="gaofenzuUI" IsChecked="{Binding gaofenzu}" Content="HLA高分辨基因分型初筛" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label5" Content="SBT" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding gaofen_sbt_a}"     x:Name="gaofen_sbt_aUI"  Content="A" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding gaofen_sbt_b}"     x:Name="gaofen_sbt_bUI" Content="B" HorizontalAlignment="Left" Margin="86,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding gaofen_sbt_drb1}"  x:Name="gaofen_sbt_drb1UI" Content="DRB1" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding gaofen_sbt_c}"     x:Name="gaofen_sbt_cUI" Content="C" HorizontalAlignment="Left" Margin="170,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding gaofen_sbt_dqb1}"  x:Name="gaofen_sbt_dqb1UI" Content="DQB1" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding gaofen_sbt_dpb1}"  x:Name="gaofen_sbt_dpb1UI" Content="DPB1" HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <CheckBox IsChecked="{Binding dengweizu}" x:Name="dengweizuUI" Content="HLA等位基因确认分型" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label7" Content="SBT" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_sbt_a}"     x:Name="dengwei_sbt_aUI" Content="A" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_sbt_b}"     x:Name="dengwei_sbt_bUI" Content="B" HorizontalAlignment="Left" Margin="86,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_sbt_drb1}"  x:Name="dengwei_sbt_drb1UI" Content="DRB1" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_sbt_c}"     x:Name="dengwei_sbt_cUI" Content="C" HorizontalAlignment="Left" Margin="170,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_sbt_dqb1}"  x:Name="dengwei_sbt_dqb1UI" Content="DQB1" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_sbt_dpb1}"  x:Name="dengwei_sbt_dpb1UI" Content="DPB1" HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label8" Content="SSOP" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_ssop_a}"     x:Name="dengwei_ssop_aUI" Content="A" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_ssop_b}"     x:Name="dengwei_ssop_bUI" Content="B" HorizontalAlignment="Left" Margin="86,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_ssop_drb1}"  x:Name="dengwei_ssop_drb1UI" Content="DRB1" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_ssop_c}"     x:Name="dengwei_ssop_cUI" Content="C" HorizontalAlignment="Left" Margin="170,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_ssop_dqb1}"  x:Name="dengwei_ssop_dqb1UI" Content="DQB1" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_ssop_dpb1}"  x:Name="dengwei_ssop_dpb1UI" Content="DPB1" HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label9" Content="NGS" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_ngs_c1}" x:Name="dengwei_ngs_c1UI" Content="Class I" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dengwei_ngs_c2}" x:Name="dengwei_ngs_c2UI" Content="Class II" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <CheckBox IsChecked="{Binding chushaizu}"  x:Name="chushaizuUI" Content="HLA初筛转确认分型" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label11" Content="SSOP" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding chushai_ssop_a}"     x:Name="chushai_ssop_aUI" Content="A" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding chushai_ssop_b}"     x:Name="chushai_ssop_bUI" Content="B" HorizontalAlignment="Left" Margin="86,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding chushai_ssop_drb1}"  x:Name="chushai_ssop_drb1UI" Content="DRB1" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding chushai_ssop_c}"     x:Name="chushai_ssop_cUI" Content="C" HorizontalAlignment="Left" Margin="170,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding chushai_ssop_dqb1}"  x:Name="chushai_ssop_dqb1UI" Content="DQB1" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding chushai_ssop_dpb1}"  x:Name="chushai_ssop_dpb1UI" Content="DPB1" HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label12" Content="NGS" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding chushai_ngs_c1}" x:Name="chushai_ngs_c1UI" Content="Class I" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding chushai_ngs_c2}" x:Name="chushai_ngs_c2UI" Content="Class II" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <CheckBox IsChecked="{Binding mianfeizu}" x:Name="mianfeizuUI" Content="HLA免费复检" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label14" Content="SBT" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_sbt_a}"    x:Name="mianfei_sbt_aUI" Content="A" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_sbt_b}"    x:Name="mianfei_sbt_bUI" Content="B" HorizontalAlignment="Left" Margin="86,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_sbt_drb1}" x:Name="mianfei_sbt_drb1UI" Content="DRB1" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_sbt_c}"    x:Name="mianfei_sbt_cUI" Content="C" HorizontalAlignment="Left" Margin="170,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_sbt_dqb1}" x:Name="mianfei_sbt_dqb1UI" Content="DQB1" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_sbt_dpb1}" x:Name="mianfei_sbt_dpb1UI" Content="DPB1" HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label15" Content="SSOP" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_ssop_a}"    x:Name="mianfei_ssop_aUI" Content="A" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_ssop_b}"    x:Name="mianfei_ssop_bUI" Content="B" HorizontalAlignment="Left" Margin="86,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_ssop_drb1}" x:Name="mianfei_ssop_drb1UI" Content="DRB1" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_ssop_c}"    x:Name="mianfei_ssop_cUI" Content="C" HorizontalAlignment="Left" Margin="170,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_ssop_dqb1}" x:Name="mianfei_ssop_dqb1UI" Content="DQB1" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding mianfei_ssop_dpb1}" x:Name="mianfei_ssop_dpb1UI" Content="DPB1" HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <CheckBox IsChecked="{Binding dangezu}" x:Name="dangezuUI" Content="HLA单个位点基因分型" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label6" Content="SBT" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_sbt_a}"     x:Name="dange_sbt_aUI" Content="A" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_sbt_b}"     x:Name="dange_sbt_bUI" Content="B" HorizontalAlignment="Left" Margin="86,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_sbt_drb1}"  x:Name="dange_sbt_drb1UI" Content="DRB1" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_sbt_c}"     x:Name="dange_sbt_cUI" Content="C" HorizontalAlignment="Left" Margin="170,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_sbt_dqb1}"  x:Name="dange_sbt_dqb1UI" Content="DQB1" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_sbt_dpb1}"  x:Name="dange_sbt_dpb1UI" Content="DPB1" HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                            <Grid >
-                                <Label x:Name="label10" Content="SSOP" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_ssop_a}"     x:Name="dange_ssop_aUI" Content="A" HorizontalAlignment="Left" Margin="56,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_ssop_b}"     x:Name="dange_ssop_bUI" Content="B" HorizontalAlignment="Left" Margin="86,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_ssop_drb1}"  x:Name="dange_ssop_drb1UI" Content="DRB1" HorizontalAlignment="Left" Margin="116,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_ssop_c}"     x:Name="dange_ssop_cUI" Content="C" HorizontalAlignment="Left" Margin="170,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_ssop_dqb1}"  x:Name="dange_ssop_dqb1UI" Content="DQB1" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top"/>
-                                <CheckBox IsChecked="{Binding dange_ssop_dpb1}"  x:Name="dange_ssop_dpb1UI" Content="DPB1" HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top"/>
-                            </Grid>
-                        </StackPanel>
+                        <Label x:Name="label4" Content=""/>
+                        <Grid Height="368" Width="310">
+                            <DataGrid x:Name="weidianliebiaoUI" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,0,0,27" Background="{x:Null}" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Binding="{Binding fenzu}" Header="分组"/>
+                                    <DataGridTextColumn Binding="{Binding leixing}"  Header="类型"/>
+                                    <DataGridTextColumn Binding="{Binding weidian}"  Header="位点"/>
+                                    <DataGridTextColumn Binding="{Binding beizhu}"  Header="备注"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Button x:Name="xiugaiweidianUI" Click="xiugaiweidianUI_Click" IsEnabled="False" Content="修改" HorizontalAlignment="Left" Margin="225,346,0,0" VerticalAlignment="Top" Width="75"/>
+                        </Grid>
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="费用信息">

@@ -40,13 +40,28 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         {
             get
             {
-                if (shenqingdanliebiaoUI.SelectedIndex>=0)
+                if (shenqingdanliebiaoUI.SelectedIndex >= 0)
                 {
                     return (Zuzhipeixing_linchuanghla_jianceshenqingdanSet)shenqingdanliebiaoUI.SelectedItem;
                 }
                 else
                 {
                     return null;
+                }
+            }
+        }
+        //选择的样本
+        private Zuzhipeixing_linchuanghla_yangbenSet xuanzedeyangben
+        {
+            get
+            {
+                if (yangbenliebiaoUI.SelectedIndex < 0)
+                {
+                    return null;
+                }
+                else
+                {
+                    return (Zuzhipeixing_linchuanghla_yangbenSet)yangbenliebiaoUI.SelectedItem;
                 }
             }
         }
@@ -69,27 +84,27 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 xin.bianhao = xin.leixing + DateTime.Now.Year + "000000".Substring(lsbianhao.Length) + lsbianhao;
                 shujuku.SaveChanges();
                 fenyeUI.Dangqianye = 1;
-                fenyechaxun(null,null);
+                fenyechaxun(null, null);
             }
         }
-
+        //删除申请单
         private void shenqingdankongzhiUI_Shanchu_Click(object sender, RoutedEventArgs e)
         {
-            if (xuanzedeshenqingdan==null)
+            if (xuanzedeshenqingdan == null)
             {
                 MessageBox.Show("请选择一个申请单！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
             shujuku.Zuzhipeixing_linchuanghla_jianceshenqingdanSet.Remove(xuanzedeshenqingdan);
             shujuku.SaveChanges();
-            fenyechaxun(null,null);
+            fenyechaxun(null, null);
         }
-
+        //修改申请单
         private void shenqingdankongzhiUI_Xiugai_Click(object sender, RoutedEventArgs e)
         {
-            if (xuanzedeshenqingdan==null)
+            if (xuanzedeshenqingdan == null)
             {
-                MessageBox.Show("请选择一个申请单！","提示",MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show("请选择一个申请单！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
             var tianjia = new Tianjiashenqingdan();
@@ -100,6 +115,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 shujuku.SaveChanges();
             }
         }
+
         //页面不可见时，调用
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
@@ -108,16 +124,16 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 shujuku.Dispose();
             }
         }
-     
+        //查询申请单
         private void chaxunUI_Click(object sender, RoutedEventArgs e)
         {
             shujuku.Dispose();
             shujuku = new Shujuku();
             fenyeUI.IsEnabled = true;
             fenyeUI.Dangqianye = 1;
-            fenyechaxun(sender,e);
+            fenyechaxun(sender, e);
         }
-
+        //分页查询
         private void fenyechaxun(object sender, RoutedEventArgs e)
         {
             var sql = shujuku.Zuzhipeixing_linchuanghla_jianceshenqingdanSet.AsQueryable();
@@ -141,15 +157,15 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             {
                 sql = sql.Where(z => z.leixing.Equals(chaxunjiancexiangmuUI.Text));
             }
-            fenyeUI.Gongjiye = sql.Count()/20+1;
-            var shuju = sql.OrderByDescending(z => z.id).Skip(fenyeUI.Dangqianye*20-20).Take(20).ToList();
+            fenyeUI.Gongjiye = sql.Count() / 20 + 1;
+            var shuju = sql.OrderByDescending(z => z.id).Skip(fenyeUI.Dangqianye * 20 - 20).Take(20).ToList();
             shujuyuan_shenqingdanliebiao = shuju;
         }
-
+        //切换界面
         private void liebiao_xiangxi_qiehuan(object sender, RoutedEventArgs e)
         {
             var bt = (e.Source as Button).Content as string;
-            if (bt.Equals("详细信息")&& xuanzedeshenqingdan==null)
+            if (bt.Equals("详细信息") && xuanzedeshenqingdan == null)
             {
                 MessageBox.Show("请选择一个申请单！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
@@ -159,7 +175,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             xiangxixinxikuaiUI.Visibility = shenqingdankuaiUI.Visibility;
             shenqingdankuaiUI.Visibility = ls;
         }
-
+        //添加样本
         private void yangbenkongzuiUI_Tianjia_Click(object sender, RoutedEventArgs e)
         {
             var xin = new Zuzhipeixing_linchuanghla_yangbenSet();
@@ -168,23 +184,61 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             tian.ShowDialog();
             if (tian.queding)
             {
-                shujuku.Zuzhipeixing_linchuanghla_weidianSet.AddRange(xin.weidians);
-                shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Add(xin);
+                xuanzedeshenqingdan.yangbens.Add(xin);
                 shujuku.SaveChanges();
                 yangbenliebiaoUI.ItemsSource = null;
                 yangbenliebiaoUI.ItemsSource = xuanzedeshenqingdan.yangbens;
             }
         }
-
+        //修改样本
         private void yangbenkongzuiUI_Xiugai_Click(object sender, RoutedEventArgs e)
         {
-
+            var tian = new Tianjiayangben();
+            tian.shujuyuan = xuanzedeyangben;
+            tian.ShowDialog();
+            if (tian.queding)
+            {
+                shujuku.SaveChanges();
+                yangbenliebiaoUI.ItemsSource = null;
+                yangbenliebiaoUI.ItemsSource = xuanzedeshenqingdan.yangbens;
+            }
         }
-
+        //删除样本
         private void yangbenkongzuiUI_Shanchu_Click(object sender, RoutedEventArgs e)
         {
-
+            shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Remove(xuanzedeyangben);
+            shujuku.SaveChanges();
+            yangbenliebiaoUI.ItemsSource = null;
+            yangbenliebiaoUI.ItemsSource = xuanzedeshenqingdan.yangbens;
+        }
+        //样本选择变化
+        private void yangbenliebiaoUI_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (xuanzedeyangben == null)
+            {
+                weidianliebiaoUI.ItemsSource = null;
+                xiugaiweidianUI.IsEnabled = false;
+            }
+            else
+            {
+                xiugaiweidianUI.IsEnabled = true;
+                weidianliebiaoUI.ItemsSource = xuanzedeyangben.weidians.Where(z=>z.jiancefou=true);
+            }
+        }
+        //修改位点
+        private void xiugaiweidianUI_Click(object sender, RoutedEventArgs e)
+        {
+            var xinweidian = new Tianjiaweidian();
+            xinweidian.yangben = xuanzedeyangben;
+            xinweidian.shuaxinshuju();
+            xinweidian.ShowDialog();
+            if (xinweidian.queding)
+            {
+                shujuku.SaveChanges();
+                weidianliebiaoUI.ItemsSource = xuanzedeyangben.weidians.Where(z => z.jiancefou = true);
+            }
         }
         #endregion
+
     }
 }

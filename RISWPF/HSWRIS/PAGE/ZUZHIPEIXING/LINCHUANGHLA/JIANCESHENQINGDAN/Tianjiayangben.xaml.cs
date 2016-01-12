@@ -30,27 +30,19 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             set
             {
                 yangbenUI.DataContext = value;
-                var weidianshuju = new Weidianbool();
-                if (value.weidians!=null)
-                {
-                    weidianshuju.weidianset = value.weidians.ToList();
-                }
-                weidianUI.DataContext = weidianshuju;
             }
             get
             {
-                var re = (Zuzhipeixing_linchuanghla_yangbenSet)yangbenUI.DataContext;
-                re.weidians = ((Weidianbool)weidianUI.DataContext).weidianset;
-                return re;
+                return (Zuzhipeixing_linchuanghla_yangbenSet)yangbenUI.DataContext;
             }
         }
         public bool queding { set; get; }
 
         private void quedingUI_Click(object sender, RoutedEventArgs e)
         {
-            if (xingmingUI.Text.Trim().Length<1)
+            if (xingmingUI.Text.Trim().Length < 1)
             {
-                MessageBox.Show("姓名不能为空！","提示",MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show("姓名不能为空！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
             queding = true;
