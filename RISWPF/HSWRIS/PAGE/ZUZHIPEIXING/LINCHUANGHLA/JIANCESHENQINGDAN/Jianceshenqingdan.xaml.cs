@@ -184,7 +184,8 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             tian.ShowDialog();
             if (tian.queding)
             {
-                xuanzedeshenqingdan.yangbens.Add(xin);
+                xin.shenqingdan = xuanzedeshenqingdan;
+                shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Add(xin);
                 shujuku.SaveChanges();
                 yangbenliebiaoUI.ItemsSource = null;
                 yangbenliebiaoUI.ItemsSource = xuanzedeshenqingdan.yangbens;
@@ -222,7 +223,14 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             else
             {
                 xiugaiweidianUI.IsEnabled = true;
-                weidianliebiaoUI.ItemsSource = xuanzedeyangben.weidians.Where(z=>z.jiancefou=true);
+                if ( xuanzedeyangben.weidians == null)
+                {
+                    weidianliebiaoUI.ItemsSource = null;
+                }
+                else
+                {
+                    weidianliebiaoUI.ItemsSource = xuanzedeyangben.weidians;
+                }
             }
         }
         //修改位点
@@ -230,12 +238,14 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         {
             var xinweidian = new Tianjiaweidian();
             xinweidian.yangben = xuanzedeyangben;
+            xinweidian.shujuku = shujuku;
             xinweidian.shuaxinshuju();
             xinweidian.ShowDialog();
             if (xinweidian.queding)
             {
                 shujuku.SaveChanges();
-                weidianliebiaoUI.ItemsSource = xuanzedeyangben.weidians.Where(z => z.jiancefou = true);
+                weidianliebiaoUI.ItemsSource = null;
+                weidianliebiaoUI.ItemsSource = xuanzedeyangben.weidians;
             }
         }
         #endregion

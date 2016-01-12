@@ -68,7 +68,7 @@
                 <Button x:Name="xiangxixinxiUI" Click="liebiao_xiangxi_qiehuan" Content="详细信息" HorizontalAlignment="Left"  Width="75"/>
             </Grid>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Name="xiangxixinxikuaiUI" Visibility="Visible">
+        <StackPanel Orientation="Vertical" Name="xiangxixinxikuaiUI" Visibility="Collapsed">
             <Label x:Name="label2_Copy" Content="---- 详细信息 ----" FontSize="15"/>
             <TabControl x:Name="tabControl" MinHeight="400" Background="{x:Null}">
                 <TabItem Header="样本信息">
@@ -102,10 +102,10 @@
                         <Grid Height="368" Width="310">
                             <DataGrid x:Name="weidianliebiaoUI" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,0,0,27" Background="{x:Null}" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Binding="{Binding fenzu}" Header="分组"/>
-                                    <DataGridTextColumn Binding="{Binding leixing}"  Header="类型"/>
+                                    <DataGridTextColumn Binding="{Binding fenzu}"  Header="分组"/>
+                                    <DataGridTextColumn Binding="{Binding leixing}"   Header="类型"/>
                                     <DataGridTextColumn Binding="{Binding weidian}"  Header="位点"/>
-                                    <DataGridTextColumn Binding="{Binding beizhu}"  Header="备注"/>
+                                    <DataGridTextColumn Binding="{Binding beizhu}"   Header="备注"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                             <Button x:Name="xiugaiweidianUI" Click="xiugaiweidianUI_Click" IsEnabled="False" Content="修改" HorizontalAlignment="Left" Margin="225,346,0,0" VerticalAlignment="Top" Width="75"/>

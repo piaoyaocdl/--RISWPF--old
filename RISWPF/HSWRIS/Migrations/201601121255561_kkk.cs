@@ -3,7 +3,7 @@ namespace HSWRIS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ji : DbMigration
+    public partial class kkk : DbMigration
     {
         public override void Up()
         {
@@ -101,6 +101,8 @@ namespace HSWRIS.Migrations
                         fenzu = c.String(),
                         leixing = c.String(),
                         weidian = c.String(),
+                        beizhu = c.String(),
+                        jiancefou = c.Boolean(nullable: false),
                         yangben_id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.id)

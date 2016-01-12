@@ -17,7 +17,6 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         public string weidian { set; get; }
         public string beizhu { set; get; }
 
-        public bool jiancefou { set; get; }
         public Zuzhipeixing_linchuanghla_yangbenSet yangben { set; get; }
 
         public bool xiangtong(Zuzhipeixing_linchuanghla_weidianSet z)

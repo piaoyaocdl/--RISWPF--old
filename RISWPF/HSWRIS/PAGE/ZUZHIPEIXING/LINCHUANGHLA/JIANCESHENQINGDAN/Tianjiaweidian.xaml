@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="HSWRIS" Height="600" Width="800" Icon="/HSWRIS;component/RESOURCE/PIC/图标.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="baoliuUI" HorizontalAlignment="Left" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="False"  Margin="10,41,0,0" VerticalAlignment="Top" Height="474" Width="350" Background="{x:Null}">
+        <DataGrid x:Name="baoliuUI" HorizontalAlignment="Left" IsReadOnly="True" SelectionChanged="baoliuUI_SelectionChanged" ItemsSource="{Binding}"  AutoGenerateColumns="False"  Margin="10,41,0,0" VerticalAlignment="Top" Height="474" Width="350" Background="{x:Null}">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding fenzu}" Header="分组"/>
-                <DataGridTextColumn Binding="{Binding leixing}"  Header="类型"/>
-                <DataGridTextColumn Binding="{Binding weidian}"  Header="位点"/>
-                <DataGridTextColumn Binding="{Binding beizhu}"  Header="备注"/>
+                <DataGridTextColumn Binding="{Binding fenzu}" Header="分组" />
+                <DataGridTextColumn Binding="{Binding leixing}"  Header="类型" />
+                <DataGridTextColumn Binding="{Binding weidian}"  Header="位点" />
+                <DataGridTextColumn Binding="{Binding beizhu}"  Header="备注" />
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="shanchuUI" HorizontalAlignment="Left" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="False" Height="474" Margin="434,41,0,0" VerticalAlignment="Top" Width="350" Background="{x:Null}">
@@ -20,13 +20,12 @@
                 <DataGridTextColumn Binding="{Binding fenzu}" Header="分组"/>
                 <DataGridTextColumn Binding="{Binding leixing}"  Header="类型"/>
                 <DataGridTextColumn Binding="{Binding weidian}"  Header="位点"/>
-                <DataGridTextColumn Binding="{Binding beizhu}"  Header="备注"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="label" Content="保留" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="删除" HorizontalAlignment="Left" Margin="441,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="备注" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="49,0,0,11" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="626"/>
+        <TextBox x:Name="beizhuUI" HorizontalAlignment="Left" Height="23" LostFocus="beizhuUI_LostFocus" Margin="49,0,0,11" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="626"/>
         <Button x:Name="quedingUI" Click="quedingUI_Click" Content="确定" HorizontalAlignment="Right" Margin="0,0,10,12" VerticalAlignment="Bottom" Width="75"/>
         <Button x:Name="shanchubtUI" Click="shanchubtUI_Click" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="365,188,0,0" VerticalAlignment="Top" Width="64" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF008BFF"/>
         <Button x:Name="tianjiabtUI" Click="tianjiabtUI_Click" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="365,233,0,0" VerticalAlignment="Top" Width="64" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF008BFF"/>
