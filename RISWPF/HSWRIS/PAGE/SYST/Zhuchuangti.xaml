@@ -22,6 +22,7 @@
                 <TreeViewItem Header="组织配型" IsExpanded="True">
                     <TreeViewItem Header="临床HLA" IsExpanded="True">
                         <TreeViewItem Header="检测申请单" Name="zuzhipeiing_linchuanghla_jianceshenqingdanUI"  Selected="zuzhipeiing_linchuanghla_jianceshenqingdanUI_Selected" />
+                        <TreeViewItem Header="样本冰冻保存记录" Name="zuzhipeiing_linchuanghla_yangbenbingdongbaocunjiluUI" Selected="zuzhipeiing_linchuanghla_yangbenbingdongbaocunjiluUI_Selected"  />
                     </TreeViewItem>
                 </TreeViewItem>
             </TreeView>

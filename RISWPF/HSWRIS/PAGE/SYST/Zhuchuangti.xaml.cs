@@ -33,5 +33,10 @@ namespace HSWRIS.PAGE.SYST
         {
             jiazaiqi.Content = new PAGE.SYST.Gerenzhongxin();
         }
+
+        private void zuzhipeiing_linchuanghla_yangbenbingdongbaocunjiluUI_Selected(object sender, RoutedEventArgs e)
+        {
+            jiazaiqi.Content = new PAGE.ZUZHIPEIXING.LINCHUANGHLA.YANGBENBINGDONGBAOCUNJILU.Yangbenbingdongbaocunjilu();
+        }
     }
 }

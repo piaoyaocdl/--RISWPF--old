@@ -97,6 +97,9 @@
     <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiayangben.xaml.cs">
       <DependentUpon>Tianjiayangben.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\YANGBENBINGDONGBAOCUNJILU\Yangbenbingdongbaocunjilu.xaml.cs">
+      <DependentUpon>Yangbenbingdongbaocunjilu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shujuku.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -178,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiayangben.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\YANGBENBINGDONGBAOCUNJILU\Yangbenbingdongbaocunjilu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

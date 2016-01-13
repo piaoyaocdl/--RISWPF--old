@@ -1,0 +1,41 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.YANGBENBINGDONGBAOCUNJILU"
+      xmlns:KONGJIAN="clr-namespace:HSWRIS.KONGJIAN" x:Class="HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.YANGBENBINGDONGBAOCUNJILU.Yangbenbingdongbaocunjilu"
+      mc:Ignorable="d" 
+      MinHeight="600"
+     Width="1100"
+      Title="Yangbenbingdongbaocunjilu">
+
+    <StackPanel>
+        <Label x:Name="label" Style="{StaticResource ResourceKey=yetoubiaoti}" Content="样本冰冻保存记录" />
+        <StackPanel  Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="label1" Content="日期"/>
+            <DatePicker Width="100"/>
+            <Label x:Name="label1_Copy" Content="至"/>
+            <DatePicker Width="100"/>
+            <Label x:Name="label1_Copy1" Content="" Width="294"/>
+            <KONGJIAN:Fenyechaxun/>
+            <Button x:Name="button" Content="查询" Padding="15,0,15,0" Margin="5,0,5,0"/>
+            <Button x:Name="button_Copy" Content="打印记录表"  Padding="15,0,15,0"  Margin="5,0,5,0"/>
+            <Button x:Name="button_Copy1" Content="打印样本留样"  Padding="15,0,15,0"  Margin="5,0,5,0"/>
+        </StackPanel>
+        <Label x:Name="label2" Content="---- 记录列表 ----" FontSize="15"/>
+        <DataGrid x:Name="dataGrid" Height="200" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="标本类型"/>
+                <DataGridTextColumn Header="标本类型"/>
+                <DataGridTextColumn Header="分类"/>
+                <DataGridTextColumn Header="板号"/>
+                <DataGridTextColumn Header="日期"/>
+                <DataGridTextColumn Header="样本总数"/>
+                <DataGridTextColumn Header="操作者"/>
+                <DataGridTextColumn Header="备注"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </StackPanel>
+</Page>
