@@ -73,13 +73,9 @@
     <Compile Include="KONGJIAN\Liebiaokongzhi.xaml.cs">
       <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601121255561_kkk.cs" />
-    <Compile Include="Migrations\201601121255561_kkk.Designer.cs">
-      <DependentUpon>201601121255561_kkk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601121331595_jiji.cs" />
-    <Compile Include="Migrations\201601121331595_jiji.Designer.cs">
-      <DependentUpon>201601121331595_jiji.cs</DependentUpon>
+    <Compile Include="Migrations\201601130357014_fewfew.cs" />
+    <Compile Include="Migrations\201601130357014_fewfew.Designer.cs">
+      <DependentUpon>201601130357014_fewfew.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
@@ -148,11 +144,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201601121255561_kkk.resx">
-      <DependentUpon>201601121255561_kkk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601121331595_jiji.resx">
-      <DependentUpon>201601121331595_jiji.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601130357014_fewfew.resx">
+      <DependentUpon>201601130357014_fewfew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

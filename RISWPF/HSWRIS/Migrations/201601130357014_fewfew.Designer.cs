@@ -7,13 +7,13 @@ namespace HSWRIS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class jiji : IMigrationMetadata
+    public sealed partial class fewfew : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(jiji));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fewfew));
         
         string IMigrationMetadata.Id
         {
-            get { return "201601121331595_jiji"; }
+            get { return "201601130357014_fewfew"; }
         }
         
         string IMigrationMetadata.Source
