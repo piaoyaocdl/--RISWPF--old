@@ -73,13 +73,21 @@
     <Compile Include="KONGJIAN\Liebiaokongzhi.xaml.cs">
       <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601130902207_few.cs" />
-    <Compile Include="Migrations\201601130902207_few.Designer.cs">
-      <DependentUpon>201601130902207_few.cs</DependentUpon>
+    <Compile Include="Migrations\201601131226257_ll.cs" />
+    <Compile Include="Migrations\201601131226257_ll.Designer.cs">
+      <DependentUpon>201601131226257_ll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601130942527_fewfew.cs" />
-    <Compile Include="Migrations\201601130942527_fewfew.Designer.cs">
-      <DependentUpon>201601130942527_fewfew.cs</DependentUpon>
+    <Compile Include="Migrations\201601131258145_jiji.cs" />
+    <Compile Include="Migrations\201601131258145_jiji.Designer.cs">
+      <DependentUpon>201601131258145_jiji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601131313146_jiji1.cs" />
+    <Compile Include="Migrations\201601131313146_jiji1.Designer.cs">
+      <DependentUpon>201601131313146_jiji1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601131323312_jiji2.cs" />
+    <Compile Include="Migrations\201601131323312_jiji2.Designer.cs">
+      <DependentUpon>201601131323312_jiji2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
@@ -151,11 +159,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201601130902207_few.resx">
-      <DependentUpon>201601130902207_few.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601131226257_ll.resx">
+      <DependentUpon>201601131226257_ll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601130942527_fewfew.resx">
-      <DependentUpon>201601130942527_fewfew.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601131258145_jiji.resx">
+      <DependentUpon>201601131258145_jiji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601131313146_jiji1.resx">
+      <DependentUpon>201601131313146_jiji1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601131323312_jiji2.resx">
+      <DependentUpon>201601131323312_jiji2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -53,6 +53,7 @@ namespace HSWRIS.PAGE.SYST
                 var ls = shujuku.YonghuSet.Where(yonghu => yonghu.zhanghao.Equals(zhanghaoUI.Text) && yonghu.mima.Equals(mimaUI.Password)).Count();
                 if (ls == 1)
                 {
+                    App.dangqianyonghu = shujuku.YonghuSet.Where(yonghu => yonghu.zhanghao.Equals(zhanghaoUI.Text) && yonghu.mima.Equals(mimaUI.Password)).Single();
                     Zhuchuangti zhuchuangti = new Zhuchuangti();
                     zhuchuangti.Show();
                     this.Close();

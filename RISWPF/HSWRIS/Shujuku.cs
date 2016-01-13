@@ -5,6 +5,7 @@
     using System.Data.Entity.Infrastructure.Annotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Collections.Generic;
 
     public class Shujuku : DbContext
     {
@@ -22,7 +23,14 @@
             var yonghuSet = modelBuilder.Entity<YonghuSet>();
             yonghuSet.HasKey(yonghu => yonghu.id);
             yonghuSet.Property(yonghu => yonghu.mima).IsRequired();
-            yonghuSet.Property(yonghu => yonghu.zhanghao).IsRequired();
+            yonghuSet.Property(yonghu => yonghu.zhanghao).IsRequired().HasMaxLength(50).HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_zhanghao_weiyi_yueshu") { IsUnique = true } ));
+            yonghuSet.HasMany(y => y.jueses).WithMany(j => j.yonghus);
+
+            //JueseSet
+            var jueseSet = modelBuilder.Entity<JueseSet>();
+            jueseSet.HasKey(juese => juese.id);
+            jueseSet.Property(juese => juese.jueseming).IsRequired();
+            jueseSet.Property(juese => juese.shuoming).IsRequired();
 
             //JichuidSet
             var jichuidset = modelBuilder.Entity<JichuidSet>();
@@ -53,6 +61,7 @@
             zuzhipeixing_linchuanghla_weidianSet.HasKey(z => z.id);
         }
         public virtual DbSet<YonghuSet> YonghuSet { get; set; }
+        public virtual DbSet<JueseSet> JueseSet { get; set; }
         public virtual DbSet<JichuidSet> JichuidSet { get; set; }
         public virtual DbSet<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_jianceshenqingdanSet> Zuzhipeixing_linchuanghla_jianceshenqingdanSet { get; set; }
         public virtual DbSet<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_yangbenSet> Zuzhipeixing_linchuanghla_yangbenSet { get; set; }
@@ -64,6 +73,27 @@
         public int id { get; set; }
         public string zhanghao { get; set; }
         public string mima { get; set; }
+
+        public virtual ICollection<JueseSet> jueses { set; get; }
+       
+    }
+    public class JueseSet
+    {
+        public int id { get; set; }
+        public string jueseming { get; set; }
+        public string shuoming { get; set; }
+        public virtual ICollection<YonghuSet> yonghus { set; get; }
+        public bool xiangtong(JueseSet j)
+        {
+            if (this.jueseming.Equals(j.jueseming))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     public class JichuidSet

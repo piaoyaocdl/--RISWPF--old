@@ -195,6 +195,11 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         //修改样本
         private void yangbenkongzuiUI_Xiugai_Click(object sender, RoutedEventArgs e)
         {
+            if (xuanzedeyangben == null)
+            {
+                MessageBox.Show("请先选择样本！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
             var tian = new Tianjiayangben();
             tian.shujuyuan = xuanzedeyangben;
             tian.ShowDialog();
@@ -208,6 +213,11 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         //删除样本
         private void yangbenkongzuiUI_Shanchu_Click(object sender, RoutedEventArgs e)
         {
+            if (xuanzedeyangben==null)
+            {
+                MessageBox.Show("请先选择样本！","提示",MessageBoxButton.OK,MessageBoxImage.Information);
+                return;
+            }
             shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Remove(xuanzedeyangben);
             shujuku.SaveChanges();
             yangbenliebiaoUI.ItemsSource = null;

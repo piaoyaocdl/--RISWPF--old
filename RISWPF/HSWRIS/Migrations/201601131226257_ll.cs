@@ -3,7 +3,7 @@ namespace HSWRIS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class few : DbMigration
+    public partial class ll : DbMigration
     {
         public override void Up()
         {
@@ -68,11 +68,11 @@ namespace HSWRIS.Migrations
                     {
                         id = c.Int(nullable: false, identity: true),
                         yuanshibianhao = c.String(),
-                        xingming = c.String(),
+                        xingming = c.String(nullable: false),
                         xingbie = c.String(),
                         chushengriqi = c.DateTime(),
-                        leixing = c.String(),
-                        yangbenbianhao = c.String(),
+                        leixing = c.String(nullable: false),
+                        yangbenbianhao = c.String(nullable: false),
                         huanzhebenren = c.Boolean(),
                         gonghuanguanxi = c.String(),
                         songjiandanwei = c.String(),

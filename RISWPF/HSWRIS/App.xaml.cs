@@ -13,5 +13,7 @@ namespace HSWRIS
     /// </summary>
     public partial class App : Application
     {
+        //当前登录用户
+        public static YonghuSet dangqianyonghu { set; get; }
     }
 }

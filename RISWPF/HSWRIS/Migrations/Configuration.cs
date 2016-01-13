@@ -29,6 +29,28 @@ namespace HSWRIS.Migrations
             {
                 shujuku.JichuidSet.AddOrUpdate(new JichuidSet { biaoming = "Zuzhipeixing_linchuanghla_yangbenSet", lieming = "yangbenbianhao", gengxinpinlv = "year", gengxinshijian = DateTime.Now, jichuid = 0 });
             }
+
+            var ls3 = shujuku.JueseSet.Where(j => j.jueseming.Equals("guanliyuan") && j.shuoming.Equals("管理员")).Count();
+            if (ls3 < 1)
+            {
+                shujuku.JueseSet.AddOrUpdate(new JueseSet { jueseming = "guanliyuan", shuoming = "管理员" });
+            }
+            var ls4 = shujuku.JueseSet.Where(j => j.jueseming.Equals("putongyonghu") && j.shuoming.Equals("普通用户")).Count();
+            if (ls4 < 1)
+            {
+                shujuku.JueseSet.AddOrUpdate(new JueseSet { jueseming = "putongyonghu", shuoming = "普通用户" });
+            }
+            shujuku.SaveChanges();
+            var guanliyuanjs = shujuku.JueseSet.Where(j => j.jueseming.Equals("guanliyuan") && j.shuoming.Equals("管理员")).Single();
+            var guanliyuanyu = shujuku.YonghuSet.Where(yong => yong.zhanghao.Equals("ceshi") && yong.mima.Equals("ceshi")).Single();
+            if (!guanliyuanyu.jueses.Contains(guanliyuanjs))
+            {
+                guanliyuanyu.jueses.Add(guanliyuanjs);
+                shujuku.SaveChanges();
+            } 
+
+
+
         }
     }
 }

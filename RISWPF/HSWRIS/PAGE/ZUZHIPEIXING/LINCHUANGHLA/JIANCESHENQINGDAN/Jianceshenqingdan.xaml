@@ -67,7 +67,7 @@
                 <Button x:Name="xiangxixinxiUI" Click="liebiao_xiangxi_qiehuan" Content="详细信息" HorizontalAlignment="Left"  Width="75"/>
             </Grid>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Name="xiangxixinxikuaiUI" Visibility="Visible">
+        <StackPanel Orientation="Vertical" Name="xiangxixinxikuaiUI" Visibility="Collapsed">
             <Label x:Name="label2_Copy" Content="---- 详细信息 ----" FontSize="15"/>
             <TabControl x:Name="tabControl" MinHeight="400" Background="{x:Null}">
                 <TabItem Header="样本信息">
