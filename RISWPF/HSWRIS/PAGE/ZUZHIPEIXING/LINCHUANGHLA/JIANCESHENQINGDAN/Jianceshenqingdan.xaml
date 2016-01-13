@@ -38,7 +38,6 @@
             <DataGrid x:Name="shenqingdanliebiaoUI"  ItemsSource="{Binding}" SelectionMode="Single"   MinHeight="400" Background="{x:Null}" IsReadOnly="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="编号" Binding="{Binding bianhao}"/>
-                    <DataGridTextColumn Header="类型" Binding="{Binding leixing}"/>
                     <DataGridTextColumn Header="患者姓名" Binding="{Binding huanzhexingming}"/>
                     <DataGridTextColumn Header="性别" Binding="{Binding xingbie}"/>
                     <DataGridTextColumn Header="出生日期" Binding="{Binding chushengriqi, StringFormat=MM/dd/yyyy}"/>
@@ -68,7 +67,7 @@
                 <Button x:Name="xiangxixinxiUI" Click="liebiao_xiangxi_qiehuan" Content="详细信息" HorizontalAlignment="Left"  Width="75"/>
             </Grid>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Name="xiangxixinxikuaiUI" Visibility="Collapsed">
+        <StackPanel Orientation="Vertical" Name="xiangxixinxikuaiUI" Visibility="Visible">
             <Label x:Name="label2_Copy" Content="---- 详细信息 ----" FontSize="15"/>
             <TabControl x:Name="tabControl" MinHeight="400" Background="{x:Null}">
                 <TabItem Header="样本信息">
@@ -76,12 +75,12 @@
                         <Grid Width="770">
                             <DataGrid x:Name="yangbenliebiaoUI" SelectionChanged="yangbenliebiaoUI_SelectionChanged" ItemsSource="{Binding}"  SelectionMode="Single" Background="{x:Null}" Margin="0,0,0,27" IsReadOnly="True" AutoGenerateColumns="False">
                                 <DataGrid.Columns>
+                                    <DataGridTextColumn Binding="{Binding yangbenbianhao}" Header="样本编号"/>
                                     <DataGridTextColumn Binding="{Binding yuanshibianhao}" Header="原始编号"/>
                                     <DataGridTextColumn Binding="{Binding xingming}" Header="姓名"/>
                                     <DataGridTextColumn Binding="{Binding xingbie}" Header="性别"/>
                                     <DataGridTextColumn Binding="{Binding chushengriqi,StringFormat=MM/dd/yyyy}" Header="出生日期"/>
                                     <DataGridTextColumn Binding="{Binding leixing}" Header="类型"/>
-                                    <DataGridTextColumn Binding="{Binding yangbenbianhao}" Header="样本编号"/>
                                     <DataGridTextColumn Binding="{Binding huanzhebenren}" Header="患者本人"/>
                                     <DataGridTextColumn Binding="{Binding gonghuanguanxi}" Header="共患关系"/>
                                     <DataGridTextColumn Binding="{Binding songjiandanwei}" Header="送检单位"/>

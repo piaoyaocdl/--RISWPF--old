@@ -11,7 +11,7 @@
         <Label  Content="姓名"  HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Label  Content="性别" HorizontalAlignment="Left" Margin="475,10,0,0" VerticalAlignment="Top"/>
         <Label  Content="出生日期" HorizontalAlignment="Left" Margin="674,10,0,0" VerticalAlignment="Top"/>
-        <Label  Content="SZ/FY" HorizontalAlignment="Left" Margin="466,134,0,0" VerticalAlignment="Top"/>
+        <Label  Content="SZ/FY" HorizontalAlignment="Left" Margin="466,134,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Label  Content="样本编号" HorizontalAlignment="Left" Margin="451,72,0,0" VerticalAlignment="Top"/>
         <Label  Content="患者本人" HorizontalAlignment="Left" Margin="235,41,0,0" VerticalAlignment="Top"/>
         <Label  Content="共患关系" HorizontalAlignment="Left" Margin="235,10,0,0" VerticalAlignment="Top"/>
@@ -36,9 +36,9 @@
         <TextBox x:Name="yuanshibianhaoUI" HorizontalAlignment="Left" Height="24" Margin="89,42,0,0" TextWrapping="Wrap" Text="{Binding yuanshibianhao}" VerticalAlignment="Top" Width="120"/>
         <CheckBox x:Name="huanzhebeirenUI" IsChecked="{Binding huanzhebenren}" Content="" HorizontalAlignment="Left" Margin="298,46,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="songjiandanweiUI" HorizontalAlignment="Left" Height="24" Margin="298,135,0,0" TextWrapping="Wrap" Text="{Binding songjiandanwei}" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="yangbenbianhaoUI" HorizontalAlignment="Left" Height="24" Margin="514,73,0,0" TextWrapping="Wrap" Text="{Binding yangbenbianhao}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="yangbenbianhaoUI" IsEnabled="False" HorizontalAlignment="Left" Height="24" Margin="514,73,0,0" TextWrapping="Wrap" Text="{Binding yangbenbianhao}" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="shouyangziUI" HorizontalAlignment="Left" Height="24" Margin="737,104,0,0" TextWrapping="Wrap" Text="{Binding shouyangzhe}" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="lexingUI" HorizontalAlignment="Left" Height="24" Margin="514,135,0,0"   Text="{Binding leixing}" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="leixingUI" HorizontalAlignment="Left" Height="24" Margin="514,135,0,0"   Text="{Binding leixing}" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="SZ" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="FY" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>

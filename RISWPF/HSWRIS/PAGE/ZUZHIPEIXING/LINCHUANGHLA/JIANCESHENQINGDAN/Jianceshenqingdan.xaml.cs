@@ -81,7 +81,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 shujuku.SaveChanges();
                 var ls = shujuku.JichuidSet.Where(j => j.biaoming.Equals("Zuzhipeixing_linchuanghla_jianceshenqingdanSet") && j.lieming.Equals("bianhao")).Single();
                 var lsbianhao = (xin.id - ls.jichuid) + "";
-                xin.bianhao = xin.leixing + DateTime.Now.Year + "000000".Substring(lsbianhao.Length) + lsbianhao;
+                xin.bianhao = "H" + DateTime.Now.Year.ToString().Substring(2) + "0000".Substring(lsbianhao.Length) + lsbianhao;
                 shujuku.SaveChanges();
                 fenyeUI.Dangqianye = 1;
                 fenyechaxun(null, null);
@@ -153,10 +153,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             {
                 sql = sql.Where(z => z.bianhao.Equals(chaxunbianhaoUI.Text.Trim()));
             }
-            if (chaxunjiancexiangmuUI.SelectedIndex >= 0)
-            {
-                sql = sql.Where(z => z.leixing.Equals(chaxunjiancexiangmuUI.Text));
-            }
+        
             fenyeUI.Gongjiye = sql.Count() / 20 + 1;
             var shuju = sql.OrderByDescending(z => z.id).Skip(fenyeUI.Dangqianye * 20 - 20).Take(20).ToList();
             shujuyuan_shenqingdanliebiao = shuju;
@@ -179,6 +176,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         private void yangbenkongzuiUI_Tianjia_Click(object sender, RoutedEventArgs e)
         {
             var xin = new Zuzhipeixing_linchuanghla_yangbenSet();
+            xin.yangbenbianhao = "lsbh";
             var tian = new Tianjiayangben();
             tian.shujuyuan = xin;
             tian.ShowDialog();
@@ -186,6 +184,9 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             {
                 xin.shenqingdan = xuanzedeshenqingdan;
                 shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Add(xin);
+                shujuku.SaveChanges();
+                var jichubianhao =(xin.id- shujuku.JichuidSet.Where(z=>z.biaoming.Equals("Zuzhipeixing_linchuanghla_yangbenSet")&&z.lieming.Equals("yangbenbianhao")).Single().jichuid).ToString();
+                xin.yangbenbianhao = xin.leixing + DateTime.Now.Year.ToString().Substring(2) + "0000".Substring(jichubianhao.Length) + jichubianhao;
                 shujuku.SaveChanges();
                 yangbenliebiaoUI.ItemsSource = null;
                 yangbenliebiaoUI.ItemsSource = xuanzedeshenqingdan.yangbens;

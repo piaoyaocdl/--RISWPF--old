@@ -3,7 +3,7 @@ namespace HSWRIS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fewfew : DbMigration
+    public partial class few : DbMigration
     {
         public override void Up()
         {
@@ -36,8 +36,7 @@ namespace HSWRIS.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        leixing = c.String(nullable: false),
-                        bianhao = c.String(nullable: false, maxLength: 50),
+                        bianhao = c.String(),
                         huanzhexingming = c.String(nullable: false),
                         xingbie = c.String(),
                         shenfenzhenghao = c.String(),
@@ -61,8 +60,7 @@ namespace HSWRIS.Migrations
                         zhuyuan = c.Boolean(),
                         menzhen = c.Boolean(),
                     })
-                .PrimaryKey(t => t.id)
-                .Index(t => t.bianhao, unique: true, name: "IX_bianhao_weiyi");
+                .PrimaryKey(t => t.id);
             
             CreateTable(
                 "dbo.Zuzhipeixing_linchuanghla_yangbenSet",
@@ -116,7 +114,6 @@ namespace HSWRIS.Migrations
             DropForeignKey("dbo.Zuzhipeixing_linchuanghla_weidianSet", "yangben_id", "dbo.Zuzhipeixing_linchuanghla_yangbenSet");
             DropIndex("dbo.Zuzhipeixing_linchuanghla_weidianSet", new[] { "yangben_id" });
             DropIndex("dbo.Zuzhipeixing_linchuanghla_yangbenSet", new[] { "shenqingdan_id" });
-            DropIndex("dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet", "IX_bianhao_weiyi");
             DropTable("dbo.Zuzhipeixing_linchuanghla_weidianSet");
             DropTable("dbo.Zuzhipeixing_linchuanghla_yangbenSet");
             DropTable("dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet");

@@ -34,6 +34,15 @@ namespace HSWRIS.PAGE.SYST
                     ls.jichuid = zuidaid;
                     shujuku.SaveChanges();
                 }
+
+                var ls1 = shujuku.JichuidSet.Where(j => j.biaoming.Equals("Zuzhipeixing_linchuanghla_yangbenSet") && j.lieming.Equals("yangbenbianhao")).Single();
+                if (ls1.gengxinshijian.Year != DateTime.Now.Year)
+                {
+                    ls1.gengxinshijian = DateTime.Now;
+                    var zuidaid = shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Max(z => z.id);
+                    ls1.jichuid = zuidaid;
+                    shujuku.SaveChanges();
+                }
             }
         }
 

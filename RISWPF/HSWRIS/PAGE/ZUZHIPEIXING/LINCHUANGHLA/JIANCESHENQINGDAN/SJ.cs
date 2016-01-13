@@ -63,7 +63,6 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
     public class Zuzhipeixing_linchuanghla_jianceshenqingdanSet
     {
         public int id { set; get; }
-        public string leixing { set; get; }
         public string bianhao { set; get; }
         public string huanzhexingming { set; get; }
         public string xingbie { set; get; }

@@ -38,14 +38,15 @@
             zuzhipeixing_linchuanghla_jianceshenqingdanSet.HasKey(z => z.id);
             zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.huanzhexingming).IsRequired();
             zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.shouyangriqi).IsRequired();
-            zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.leixing).IsRequired();
-            zuzhipeixing_linchuanghla_jianceshenqingdanSet.Property(z => z.bianhao).IsRequired().HasMaxLength(50).HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(new IndexAttribute("IX_bianhao_weiyi") { IsUnique = true })); ;
             zuzhipeixing_linchuanghla_jianceshenqingdanSet.HasMany(z => z.yangbens).WithRequired(y=>y.shenqingdan);
 
             //Zuzhipeixing_linchuanghla_yangbenSet
             var zuzhipeixing_linchuanghla_yangbenSet = modelBuilder.Entity<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_yangbenSet>();
             zuzhipeixing_linchuanghla_yangbenSet.HasKey(z=>z.id);
             zuzhipeixing_linchuanghla_yangbenSet.HasMany(z => z.weidians).WithRequired(y=>y.yangben);
+            zuzhipeixing_linchuanghla_yangbenSet.Property(z => z.xingming).IsRequired();
+            zuzhipeixing_linchuanghla_yangbenSet.Property(z => z.yangbenbianhao).IsRequired();
+            zuzhipeixing_linchuanghla_yangbenSet.Property(z => z.leixing).IsRequired();
 
             //Zuzhipeixing_linchuanghla_weidianSet
             var zuzhipeixing_linchuanghla_weidianSet = modelBuilder.Entity<PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Zuzhipeixing_linchuanghla_weidianSet>();
