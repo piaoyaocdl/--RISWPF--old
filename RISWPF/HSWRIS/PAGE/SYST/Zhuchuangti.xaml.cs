@@ -38,5 +38,10 @@ namespace HSWRIS.PAGE.SYST
         {
             jiazaiqi.Content = new PAGE.ZUZHIPEIXING.LINCHUANGHLA.YANGBENBINGDONGBAOCUNJILU.Yangbenbingdongbaocunjilu();
         }
+
+        private void zuzhipeiing_linchuanghla_feiyongshezhiUI_Selected(object sender, RoutedEventArgs e)
+        {
+            jiazaiqi
+        }
     }
 }

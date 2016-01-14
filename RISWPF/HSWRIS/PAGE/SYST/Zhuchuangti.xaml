@@ -23,8 +23,10 @@
                     <TreeViewItem Header="临床HLA" IsExpanded="True">
                         <TreeViewItem Header="检测申请单" Name="zuzhipeiing_linchuanghla_jianceshenqingdanUI"  Selected="zuzhipeiing_linchuanghla_jianceshenqingdanUI_Selected" />
                         <TreeViewItem Header="样本冰冻保存记录" Name="zuzhipeiing_linchuanghla_yangbenbingdongbaocunjiluUI" Selected="zuzhipeiing_linchuanghla_yangbenbingdongbaocunjiluUI_Selected"  />
+                        <TreeViewItem Header="费用设置" Name="zuzhipeiing_linchuanghla_feiyongshezhiUI" Selected="zuzhipeiing_linchuanghla_feiyongshezhiUI_Selected"/>
                     </TreeViewItem>
                 </TreeViewItem>
+                <TreeViewItem Header="系统设置" IsExpanded="True"/>
             </TreeView>
         </ScrollViewer>
         <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="Auto">

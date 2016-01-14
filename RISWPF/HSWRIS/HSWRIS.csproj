@@ -73,10 +73,6 @@
     <Compile Include="KONGJIAN\Liebiaokongzhi.xaml.cs">
       <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601140646327_fewfw.cs" />
-    <Compile Include="Migrations\201601140646327_fewfw.Designer.cs">
-      <DependentUpon>201601140646327_fewfw.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
       <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
@@ -84,10 +80,12 @@
     <Compile Include="PAGE\SYST\Zhuchuangti.xaml.cs">
       <DependentUpon>Zhuchuangti.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Feiyongshezhi.xaml.cs">
+      <DependentUpon>Feiyongshezhi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Jianceshenqingdan.xaml.cs">
       <DependentUpon>Jianceshenqingdan.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\SJ.cs" />
     <Compile Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Tianjiashenqingdan.xaml.cs">
       <DependentUpon>Tianjiashenqingdan.xaml</DependentUpon>
     </Compile>
@@ -125,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Feiyongshezhi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PAGE\ZUZHIPEIXING\LINCHUANGHLA\JIANCESHENQINGDAN\Jianceshenqingdan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,9 +149,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201601140646327_fewfw.resx">
-      <DependentUpon>201601140646327_fewfw.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

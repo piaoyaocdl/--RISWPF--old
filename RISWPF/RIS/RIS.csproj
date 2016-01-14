@@ -96,6 +96,10 @@
     <Compile Include="KONGJIAN\Fenyechaxun.xaml.cs">
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601141304151_ji.cs" />
+    <Compile Include="Migrations\201601141304151_ji.Designer.cs">
+      <DependentUpon>201601141304151_ji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PAGE\SYST\Gerenzhongxin.xaml.cs">
       <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
@@ -177,6 +181,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201601141304151_ji.resx">
+      <DependentUpon>201601141304151_ji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -1,0 +1,15 @@
+﻿<Page x:Class="HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN.Feiyongshezhi"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN"
+      mc:Ignorable="d" 
+      MinHeight="600"
+      Width="1100"
+      Title="Feiyongshezhi">
+
+    <StackPanel>
+        <Label x:Name="label" Content="费用设置"  Style="{StaticResource ResourceKey=yetoubiaoti}"/>
+    </StackPanel>
+</Page>
