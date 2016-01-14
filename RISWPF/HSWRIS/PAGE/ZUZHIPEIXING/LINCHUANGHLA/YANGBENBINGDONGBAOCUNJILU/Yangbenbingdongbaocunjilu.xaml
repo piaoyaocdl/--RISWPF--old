@@ -36,6 +36,10 @@
                 <DataGridTextColumn Header="备注"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Grid Height="232">
+            <KONGJIAN:Liebiaokongzhi HorizontalAlignment="Left" Margin="310,93,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="button1" Content="详细信息" HorizontalAlignment="Left" Margin="60,63,0,0" VerticalAlignment="Top" Width="75"/>
+        </Grid>
 
     </StackPanel>
 </Page>

@@ -153,7 +153,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             {
                 sql = sql.Where(z => z.bianhao.Equals(chaxunbianhaoUI.Text.Trim()));
             }
-        
+
             fenyeUI.Gongjiye = sql.Count() / 20 + 1;
             var shuju = sql.OrderByDescending(z => z.id).Skip(fenyeUI.Dangqianye * 20 - 20).Take(20).ToList();
             shujuyuan_shenqingdanliebiao = shuju;
@@ -185,7 +185,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
                 xin.shenqingdan = xuanzedeshenqingdan;
                 shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Add(xin);
                 shujuku.SaveChanges();
-                var jichubianhao =(xin.id- shujuku.JichuidSet.Where(z=>z.biaoming.Equals("Zuzhipeixing_linchuanghla_yangbenSet")&&z.lieming.Equals("yangbenbianhao")).Single().jichuid).ToString();
+                var jichubianhao = (xin.id - shujuku.JichuidSet.Where(z => z.biaoming.Equals("Zuzhipeixing_linchuanghla_yangbenSet") && z.lieming.Equals("yangbenbianhao")).Single().jichuid).ToString();
                 xin.yangbenbianhao = xin.leixing + DateTime.Now.Year.ToString().Substring(2) + "0000".Substring(jichubianhao.Length) + jichubianhao;
                 shujuku.SaveChanges();
                 yangbenliebiaoUI.ItemsSource = null;
@@ -213,9 +213,9 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         //删除样本
         private void yangbenkongzuiUI_Shanchu_Click(object sender, RoutedEventArgs e)
         {
-            if (xuanzedeyangben==null)
+            if (xuanzedeyangben == null)
             {
-                MessageBox.Show("请先选择样本！","提示",MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show("请先选择样本！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
             shujuku.Zuzhipeixing_linchuanghla_yangbenSet.Remove(xuanzedeyangben);
@@ -234,14 +234,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             else
             {
                 xiugaiweidianUI.IsEnabled = true;
-                if ( xuanzedeyangben.weidians == null)
-                {
-                    weidianliebiaoUI.ItemsSource = null;
-                }
-                else
-                {
-                    weidianliebiaoUI.ItemsSource = xuanzedeyangben.weidians;
-                }
+                weidianliebiaoUI.ItemsSource = xuanzedeyangben.weidians;
             }
         }
         //修改位点

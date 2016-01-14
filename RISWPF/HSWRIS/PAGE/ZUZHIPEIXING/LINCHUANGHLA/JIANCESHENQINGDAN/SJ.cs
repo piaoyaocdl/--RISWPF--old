@@ -56,7 +56,23 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         public string beizhu { set; get; }//备注
 
         public Zuzhipeixing_linchuanghla_jianceshenqingdanSet shenqingdan { get; set; }
-        public virtual ICollection<Zuzhipeixing_linchuanghla_weidianSet> weidians { set; get; }
+        public virtual ICollection<Zuzhipeixing_linchuanghla_weidianSet> weidians
+        {
+            set
+            {
+                this.weidians_ = value;
+            }
+            get
+            {
+                if (this.weidians_==null)
+                {
+                    this.weidians_ = new List<Zuzhipeixing_linchuanghla_weidianSet>();
+                }
+                return this.weidians_;
+            }
+        }
+        //-------------------------------------------------------------------------
+        private ICollection<Zuzhipeixing_linchuanghla_weidianSet> weidians_;
     }
 
     public class Zuzhipeixing_linchuanghla_jianceshenqingdanSet
@@ -87,6 +103,23 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         public Nullable<bool> zhuyuan { set; get; }
         public Nullable<bool> menzhen { set; get; }
 
-        public virtual ICollection<Zuzhipeixing_linchuanghla_yangbenSet> yangbens { get; set; }
+        public virtual ICollection<Zuzhipeixing_linchuanghla_yangbenSet> yangbens
+        {
+            get
+            {
+                if (this.yangbens_==null)
+                {
+                    this.yangbens_ = new List<Zuzhipeixing_linchuanghla_yangbenSet>();
+                }
+                return this.yangbens_;
+            }
+            set
+            {
+                this.yangbens_ = value;
+            }
+        }
+        //----------------------------------------------------
+        public ICollection<Zuzhipeixing_linchuanghla_yangbenSet> yangbens_;
+
     }
 }

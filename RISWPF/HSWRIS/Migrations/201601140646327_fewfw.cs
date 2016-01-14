@@ -3,7 +3,7 @@ namespace HSWRIS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ll : DbMigration
+    public partial class fewfw : DbMigration
     {
         public override void Up()
         {
@@ -22,14 +22,25 @@ namespace HSWRIS.Migrations
                 .PrimaryKey(t => t.id);
             
             CreateTable(
+                "dbo.JueseSets",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        jueseming = c.String(nullable: false),
+                        shuoming = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
                 "dbo.YonghuSets",
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        zhanghao = c.String(nullable: false),
+                        zhanghao = c.String(nullable: false, maxLength: 50),
                         mima = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.id);
+                .PrimaryKey(t => t.id)
+                .Index(t => t.zhanghao, unique: true, name: "IX_zhanghao_weiyi_yueshu");
             
             CreateTable(
                 "dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet",
@@ -106,18 +117,38 @@ namespace HSWRIS.Migrations
                 .ForeignKey("dbo.Zuzhipeixing_linchuanghla_yangbenSet", t => t.yangben_id, cascadeDelete: true)
                 .Index(t => t.yangben_id);
             
+            CreateTable(
+                "dbo.YonghuSetJueseSets",
+                c => new
+                    {
+                        YonghuSet_id = c.Int(nullable: false),
+                        JueseSet_id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.YonghuSet_id, t.JueseSet_id })
+                .ForeignKey("dbo.YonghuSets", t => t.YonghuSet_id, cascadeDelete: true)
+                .ForeignKey("dbo.JueseSets", t => t.JueseSet_id, cascadeDelete: true)
+                .Index(t => t.YonghuSet_id)
+                .Index(t => t.JueseSet_id);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Zuzhipeixing_linchuanghla_yangbenSet", "shenqingdan_id", "dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet");
             DropForeignKey("dbo.Zuzhipeixing_linchuanghla_weidianSet", "yangben_id", "dbo.Zuzhipeixing_linchuanghla_yangbenSet");
+            DropForeignKey("dbo.YonghuSetJueseSets", "JueseSet_id", "dbo.JueseSets");
+            DropForeignKey("dbo.YonghuSetJueseSets", "YonghuSet_id", "dbo.YonghuSets");
+            DropIndex("dbo.YonghuSetJueseSets", new[] { "JueseSet_id" });
+            DropIndex("dbo.YonghuSetJueseSets", new[] { "YonghuSet_id" });
             DropIndex("dbo.Zuzhipeixing_linchuanghla_weidianSet", new[] { "yangben_id" });
             DropIndex("dbo.Zuzhipeixing_linchuanghla_yangbenSet", new[] { "shenqingdan_id" });
+            DropIndex("dbo.YonghuSets", "IX_zhanghao_weiyi_yueshu");
+            DropTable("dbo.YonghuSetJueseSets");
             DropTable("dbo.Zuzhipeixing_linchuanghla_weidianSet");
             DropTable("dbo.Zuzhipeixing_linchuanghla_yangbenSet");
             DropTable("dbo.Zuzhipeixing_linchuanghla_jianceshenqingdanSet");
             DropTable("dbo.YonghuSets");
+            DropTable("dbo.JueseSets");
             DropTable("dbo.JichuidSets");
         }
     }

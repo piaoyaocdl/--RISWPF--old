@@ -33,7 +33,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
             var lsliebiao = new List<Zuzhipeixing_linchuanghla_weidianSet>();
             foreach (var ls in chushishuju)
             {
-                if (yangben.weidians==null||yangben.weidians.Where(z => z.xiangtong(ls)).Count() == 0)
+                if ( yangben.weidians.Where(z => z.xiangtong(ls)).Count() == 0)
                 {
                     lsliebiao.Add(ls);
                 }
@@ -114,10 +114,6 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         //添加位点
         private void tianjiabtUI_Click(object sender, RoutedEventArgs e)
         {
-            if (yangben.weidians==null)
-            {
-                yangben.weidians = new List<Zuzhipeixing_linchuanghla_weidianSet>();
-            }
             foreach (var ls in shanchuUI.SelectedItems)
             {
                 var dangqian = (Zuzhipeixing_linchuanghla_weidianSet)ls;
@@ -134,7 +130,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         //保留数据 选择变换
         private void baoliuUI_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (baoliuUI.SelectedItems.Count==1)
+            if (baoliuUI.SelectedItems.Count == 1)
             {
                 beizhuUI.Text = ((Zuzhipeixing_linchuanghla_weidianSet)baoliuUI.SelectedItem).beizhu;
             }
@@ -148,7 +144,7 @@ namespace HSWRIS.PAGE.ZUZHIPEIXING.LINCHUANGHLA.JIANCESHENQINGDAN
         {
             if (baoliuUI.SelectedItems.Count == 1)
             {
-                 ((Zuzhipeixing_linchuanghla_weidianSet)baoliuUI.SelectedItem).beizhu= beizhuUI.Text;
+                ((Zuzhipeixing_linchuanghla_weidianSet)baoliuUI.SelectedItem).beizhu = beizhuUI.Text;
                 shuaxinshuju();
             }
         }

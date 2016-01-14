@@ -74,15 +74,57 @@
         public string zhanghao { get; set; }
         public string mima { get; set; }
 
-        public virtual ICollection<JueseSet> jueses { set; get; }
-       
+        public virtual ICollection<JueseSet> jueses
+        {
+            set
+            {
+                this.jueses_ = value;
+            }
+            get
+            {
+                if (this.jueses_==null)
+                {
+                    this.jueses_ = new List<JueseSet>();
+                }
+                return this.jueses_;
+            }
+        }
+        //---------------------------------------------------------------
+        private ICollection<JueseSet> jueses_;
+        public bool xiangtong(YonghuSet y)
+        {
+            if (this.zhanghao.Equals(y.zhanghao))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
     public class JueseSet
     {
         public int id { get; set; }
         public string jueseming { get; set; }
         public string shuoming { get; set; }
-        public virtual ICollection<YonghuSet> yonghus { set; get; }
+        public virtual ICollection<YonghuSet> yonghus
+        {
+            set
+            {
+                this.yonghus_ = value;
+            }
+            get
+            {
+                if (this.yonghus_==null)
+                {
+                    this.yonghus_ = new List<YonghuSet>();
+                }
+                return this.yonghus_;
+            }
+        }
+        //---------------------------------------------------------------
+        private ICollection<YonghuSet> yonghus_;
         public bool xiangtong(JueseSet j)
         {
             if (this.jueseming.Equals(j.jueseming))
